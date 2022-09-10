@@ -66,3 +66,15 @@ hr {
   flex-wrap: nowrap;
   justify-content: space-around;
 }
+
+.tpgn{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  padding: 100px;
+  background-color: rgba(rgba(77, 29, 29, 0.86));
+}
+
+.tpgn img{
+  height: 400px
+}
