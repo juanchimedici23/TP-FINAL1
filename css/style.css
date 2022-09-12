@@ -74,7 +74,22 @@ hr {
   padding: 100px;
   background-color: rgba(rgba(77, 29, 29, 0.86));
 }
-
+.conteiner {
+  display: flex;
+  flex-wrap: wrap;
+  height: 650px;
+  flex-direction: row;
+  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+}
 .tpgn img{
   height: 400px
+}
+.details {
+  width: 300px;
+}
+#letras {
+  font-family: Arial, Helvetica, sans-serif;
+  
 }
