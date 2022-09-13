@@ -16,7 +16,7 @@ body{
   
 .topnav {
   overflow: hidden;
-  background-color: #5e0b1b;
+  background-color: rgb(26, 24, 24);
   display: flex;
   justify-content: space-around;
 }
@@ -31,7 +31,7 @@ font-size: 17px;
 }
 
 .topnav a:hover {
-  background-color: #5e0b1b;
+  background-color: rgb(26, 24, 24);
   color: white;
 }
 
@@ -45,12 +45,13 @@ display: flex;
 justify-content: space-around;
 list-style: none;
 flex-wrap: nowrap;
-background-color: #5e0b1b;
+background-color: rgb(26, 24, 24);
 }
 
 .pelis img{
   width: 250px;
   height: 150px;
+  border-radius: 15px;
 }
 .pelis img:hover {
   width: 270px;
@@ -75,7 +76,7 @@ hr {
   flex-wrap: nowrap;
   justify-content: flex-start;
   padding: 100px;
-  background-color: #5e0b1b;
+  background-color: rgb(26, 24, 24);
 }
 .conteiner {
   display: flex;
