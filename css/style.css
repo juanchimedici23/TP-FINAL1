@@ -36,10 +36,6 @@ font-size: 17px;
   color: rgb(143, 143, 143);
 }
 
-.topnav a.active {
-  color: rgb(182, 182, 182);
-}
-
 #princi .pelis{
 text-emphasis: none;
 display: flex;
@@ -93,7 +89,7 @@ hr {
   background-size: 100%;
 }
 .tpgn img{
-  height: 400px;
+  height: 500px;
   border-radius: 15px;
 }
 .details {
@@ -104,4 +100,5 @@ hr {
 }
 #letras {
   font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
 }
