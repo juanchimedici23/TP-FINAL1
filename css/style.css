@@ -146,3 +146,19 @@ hr {
 footer{
  background-color: rgb(26, 24, 24);
 }
+
+.art h3{
+  font-family: 'Kanit', sans-serif;
+  font-weight: 350;
+}
+
+.bajofotos{
+  display: flex;
+  justify-content: space-between;
+}
+
+.bajofotos i{
+  position: relative;
+  top: 18px;
+  left: -13px;
+}
