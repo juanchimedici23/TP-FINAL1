@@ -137,6 +137,12 @@ hr {
   color: #f2f2f2
 }
 
-.abajo{
+.developers{
   background-color: rgb(26, 24, 24);
+  display: flex;
+  justify-content: space-evenly;
+}
+
+footer{
+ background-color: rgb(26, 24, 24);
 }
