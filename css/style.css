@@ -80,7 +80,6 @@ hr {
   flex-wrap: wrap;
   height: 650px;
   flex-direction: row;
-  justify-content: space-around;
   justify-content: center;
   align-items: center;
   border-radius: 15px;
@@ -93,7 +92,6 @@ hr {
   flex-wrap: wrap;
   height: 650px;
   flex-direction: row;
-  justify-content: space-around;
   justify-content: center;
   align-items: center;
   border-radius: 15px;
@@ -104,10 +102,12 @@ hr {
 .breaking_bad img{
   height: 500px;
   border-radius: 15px;
+  margin: 100px;
 }
 .tpgn img{
   height: 500px;
   border-radius: 15px;
+  
 }
 .details {
   width: 300px;
