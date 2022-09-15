@@ -36,7 +36,7 @@ font-size: 18px;
   color: rgb(143, 143, 143);
 }
 
-#princi .pelis{
+.pelis{
 text-emphasis: none;
 display: flex;
 justify-content: space-around;
@@ -161,4 +161,10 @@ footer{
   position: relative;
   top: 18px;
   left: -13px;
+}
+
+.menu i{
+  position: relative;
+  left: -175px;
+  top: 24px;
 }
