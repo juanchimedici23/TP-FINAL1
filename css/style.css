@@ -53,6 +53,12 @@ font-size: 18px;
 background-color: rgb(26, 24, 24);
 color: #f2f2f2
 }
+.busqueda {
+  display: flex;
+  justify-self: flex-end;
+  justify-items: flex-end;
+
+}
 
 /* Footer */
 
@@ -237,6 +243,31 @@ list-style: none;
   text-decoration: none;
   text-transform: capitalize;
 }
+
+/* Detalle generos */
+
+.acción{
+  text-emphasis: none;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  list-style: none;
+  background-color: rgb(26, 24, 24);
+  border-radius: 15px;
+}
+.acción img{
+  width: 250px;
+  height: 150px;
+  border-radius: 15px;
+}
+.acción img:hover {
+  width: 270px;
+  height: 170px;
+}
+.acción h3 {
+  font-size: 15px;
+}
+
 
 /* Responsiveness */
 
