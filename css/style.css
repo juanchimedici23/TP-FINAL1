@@ -6,8 +6,8 @@ body{
   color:antiquewhite;
   margin: 0;
   font-family: 'Kanit', sans-serif;
-
 }
+
 /* Header */
 .logo{
   display:flex;
@@ -57,7 +57,10 @@ color: #f2f2f2
   display: flex;
   justify-self: flex-end;
   justify-items: flex-end;
+}
 
+h2 {
+  margin-left: 10px;
 }
 
 /* Footer */
@@ -219,6 +222,7 @@ list-style: none;
 .generos {
   background-image: url(./img/Generos/generos-peliculas.jpg);
   background-position: center;
+  background-repeat: no-repeat;
   background-size: 100%;
   border-radius: 15px;
   height: 650px;
@@ -230,7 +234,7 @@ list-style: none;
 }
  
 .gen {
-  background-color: rgb(26, 24, 24);
+  background-color: rgba(26, 24, 24, 0.663);
   border-radius: 15px;
   height: 80px;
   width: 140px;
@@ -282,9 +286,13 @@ list-style: none;
 .menu i{
   position: relative;
   top: 24px;
+  left: -50px;
   }
   .art{
     flex-direction: column;
+  }
+  .last2{
+    display: none;
   }
 }
 @media(max-width:320px){
@@ -312,7 +320,11 @@ h2{
 
 .menu i{
   position: relative; 
-  left: 5px;
+  left: -5px;
+}
+.generos {
+  flex-direction: column;
+  background-image: url(./img/Generos/generos\ peliculas\ 2.jpg);
 }
 }
 
