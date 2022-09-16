@@ -208,6 +208,36 @@ border-radius: 15px;
 list-style: none;
 }
 
+/* Generos */
+ 
+.generos {
+  background-image: url(./img/Generos/generos-peliculas.jpg);
+  background-position: center;
+  background-size: 100%;
+  border-radius: 15px;
+  height: 650px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+ 
+.gen {
+  background-color: rgb(26, 24, 24);
+  border-radius: 15px;
+  height: 80px;
+  width: 140px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #eee;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
 /* Responsiveness */
 
 
