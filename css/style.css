@@ -162,7 +162,7 @@ hr {
 }
 .details {
   width: 300px;
-  background-color: rgb(26, 24, 24);
+  background-color: rgba(26, 24, 24, 0.663);
   border-radius: 15px;
   padding: 20px;
 }
