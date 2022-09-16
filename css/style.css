@@ -297,4 +297,22 @@ list-style: none;
   display: flex;
   justify-content: flex-start;
 }
+.pelis{
+  display: flex;
+  flex-direction: column;
 }
+h2{
+  margin-left: 10px;
+}
+
+.menu{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.menu i{
+  position: relative; 
+  left: 5px;
+}
+}
+
