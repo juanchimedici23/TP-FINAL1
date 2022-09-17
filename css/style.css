@@ -280,8 +280,8 @@ list-style: none;
 .last{
   display: none;
 }
-
 }
+
 @media(max-width:1000px){
 .menu i{
   position: relative;
@@ -295,6 +295,7 @@ list-style: none;
     display: none;
   }
 }
+
 @media(max-width:320px){
 .busquepadre{
   flex-direction: column;
