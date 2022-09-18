@@ -7,6 +7,9 @@ body{
   margin: 0;
   font-family: 'Kanit', sans-serif;
 }
+h1{
+  margin: 10px;
+}
 
 /* Header */
 .logo{
@@ -80,6 +83,7 @@ justify-content: space-around;
 background-color: rgb(26, 24, 24);
 display: flex;
 justify-content: space-evenly;
+margin-left: 10px;
 }
 /* General */
 
@@ -246,6 +250,11 @@ list-style: none;
   color: #eee;
   text-decoration: none;
   text-transform: capitalize;
+  text-align: center;
+}
+
+.gen h2{
+  margin-right: 10px;
 }
 
 /* Detalle generos */
@@ -258,6 +267,10 @@ list-style: none;
   list-style: none;
   background-color: rgb(26, 24, 24);
   border-radius: 15px;
+}
+.acción li{
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .acción img{
   width: 250px;
@@ -280,6 +293,7 @@ list-style: none;
 .last{
   display: none;
 }
+
 }
 
 @media(max-width:1000px){
@@ -294,6 +308,7 @@ list-style: none;
   .last2{
     display: none;
   }
+  
 }
 
 @media(max-width:320px){
@@ -327,5 +342,26 @@ h2{
   flex-direction: column;
   background-image: url(./img/Generos/generos\ peliculas\ 2.jpg);
 }
+.conteiner_movie{
+  background-image: url(./img/Home/topgun2.png);
+  background-size: 75vh;
+  width: 100vw;
+}
+.details{
+  display: flex;
+  align-self: flex-end;
+  justify-content: left;
+  flex-wrap: wrap;
+  background-color: rgba(26, 24, 24, 0);
+}
+
+.tpgn{
+  display: none;
+}
+#letras {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:15px;
+  color: #eee ;
+  }
 }
 
