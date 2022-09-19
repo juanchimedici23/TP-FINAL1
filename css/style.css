@@ -316,6 +316,10 @@ list-style: none;
 }
 
 @media(max-width:320px){
+.menu i{
+  position:relative;
+  left: -5px;
+}
 .busquepadre{
   flex-direction: column;
   margin: none;
@@ -346,17 +350,19 @@ h2{
 }
 .conteiner_movie{
   background-image: url(./img/Home/topgun2.png);
-  background-size: 75vh;
-  width: 100vw; 
+  background-size: 65vh;
   display: flex;
   justify-content: flex-start;
-  align-items: flex-end;
+  align-items:flex-end;
+  position:relative;
+
 }
 .details{
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
   background-color: rgba(26, 24, 24, 0);
+  margin: -10px;
 }
 .details p {
   margin-top: 50px;
@@ -371,6 +377,18 @@ h2{
   font-size:15px;
   color: #eee ;
   }
+.breaking_bad{
+  display: none;
+}
+.conteiner_serie{
+  background-image: url(./img/Home/breaking_badfondo.webp);
+  background-size: 40vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+ position: relative;
+
+}
 .acción{
   padding: 0px;
 }
@@ -379,11 +397,7 @@ h2{
 }
 }
 @media(max-width: 1024px){
-.menu i{
-    position: relative;
-    left: -110px;
-    top: 28px;
-  }
+
 .pelis{
   padding: 8px;
 }
