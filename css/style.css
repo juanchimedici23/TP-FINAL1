@@ -4,7 +4,7 @@ body{
   background-color: black;
   text-decoration: rgb(228, 183, 183);
   color:antiquewhite;
-  margin: 0;
+  margin: 10px;
   font-family: 'Kanit', sans-serif;
 }
 h1{
@@ -347,19 +347,25 @@ h2{
 .conteiner_movie{
   background-image: url(./img/Home/topgun2.png);
   background-size: 75vh;
-  width: 100vw;
+  width: 100vw; 
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
 }
 .details{
   display: flex;
-  align-self: flex-end;
-  justify-content: left;
+  justify-content: flex-start;
   flex-wrap: wrap;
   background-color: rgba(26, 24, 24, 0);
+}
+.details p {
+  margin-top: 50px;
 }
 
 .tpgn{
   display: none;
 }
+
 #letras {
   font-family: Arial, Helvetica, sans-serif;
   font-size:15px;
@@ -374,10 +380,10 @@ h2{
 }
 @media(max-width: 1024px){
 .menu i{
-  position: relative;
-  left: -110px;
-  top: 28px;
-}
+    position: relative;
+    left: -110px;
+    top: 28px;
+  }
 .pelis{
   padding: 8px;
 }
