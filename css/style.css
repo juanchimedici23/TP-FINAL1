@@ -334,6 +334,10 @@ list-style: none;
 .pelis{
   display: flex;
   flex-direction: column;
+  
+}
+.pelis li{
+  margin-left: 8px;
 }
 h2{
   margin-left: 10px;
@@ -350,7 +354,7 @@ h2{
 }
 .conteiner_movie{
   background-image: url(./img/Home/topgun2.png);
-  background-size: 65vh;
+  background-size: 55vh;
   display: flex;
   justify-content: flex-start;
   align-items:flex-end;
