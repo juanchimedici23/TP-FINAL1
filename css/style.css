@@ -293,27 +293,7 @@ list-style: none;
 /* Responsiveness */
 
 
-@media(max-width:1300px){
-.last{
-  display: none;
-}
 
-}
-
-@media(max-width:1000px){
-.menu i{
-  position: relative;
-  top: 24px;
-  left: -50px;
-  }
-  .art{
-    flex-direction: column;
-  }
-  .last2{
-    display: none;
-  }
-  
-}
 
 @media(max-width:320px){
 .menu i{
@@ -410,4 +390,25 @@ h2{
   top: -60px;
 }
 }
+@media(max-width:1300px){
+  .last{
+    display: none;
+  }
+  
+  }
+  
+  @media(max-width:1000px){
+  .menu i{
+    position: relative;
+    top: 24px;
+    left: -50px;
+    }
+    .art{
+      flex-direction: column;
+    }
+    .last2{
+      display: none;
+    }
+    
+  }
 
