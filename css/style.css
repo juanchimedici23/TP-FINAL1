@@ -14,7 +14,7 @@ h1{
 /* Header */
 .logo{
   display:flex;
-  justify-content: center;
+  justify-content: space-evenly;
   height: 100px;
 }
 
@@ -85,6 +85,15 @@ background-color: rgb(26, 24, 24);
 display: flex;
 justify-content: space-evenly;
 margin-left: 10px;
+}
+
+.logo2{
+  display: flex;
+  position: relative;
+  top: 25px;
+  height: 50px;
+  width: 100px;
+  
 }
 /* General */
 
