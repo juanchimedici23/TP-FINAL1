@@ -66,6 +66,9 @@ fetch(URLserie)
     }
     b.innerHTML = series
     })
+
     .catch(function(e){
         console.log("Error: " + e);
+        
     })
+
