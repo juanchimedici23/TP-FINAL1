@@ -205,6 +205,16 @@ margin-top: 5px;
 }
 
 /* Resultados de Busqueda */
+.busquedabox{
+  display: flex;
+  justify-content: space-around;
+}
+
+.resumenbusqueda{
+  border-color: #eee;
+  border-radius: 18px;
+  border: #eee;
+}
 
 .busquepadre{
 display: flex;

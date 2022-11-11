@@ -10,7 +10,7 @@ console.log(query)
 
 let URLpeli = `https://api.themoviedb.org/3/search/movie?query=${query}&api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US&page=1&include_adult=false`
 
-let URLserie = `https://api.themoviedb.org/3/search/tv?quey=${query}&api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US&page=1&include_adult=false`
+let URLserie = `https://api.themoviedb.org/3/search/tv?query=${query}&api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US&page=1&include_adult=false`
 
 fetch(URLpeli)
 .then(function(response){
@@ -25,10 +25,15 @@ fetch(URLpeli)
     let a = document.querySelector(".muestrapeli") 
     let peliculas = ""
 
-    for (let i =0; i < peliculasdata.length; i++){
+    for (i =0; i < peliculasdata.length; i++){
         peliculas += `<article> 
                         <a href= "./detalle_movie.html?id=${peliculasdata[i].id}" > <p>${peliculasdata[i].title}</p> </a>
-                        <p> Resumen: ${peliculasdata[i].overview} </p>
+                        <section class= "busquedabox">
+                            <img src ="https://image.tmdb.org/t/p/w154/${peliculasdata[i].poster_path}" >
+                            <div class= "resumenbusqueda">
+                                <p> Resumen: ${peliculasdata[i].overview} </p>
+                            </div>
+                        </section>
                      </article> `
     }
     a.innerHTML = peliculas
@@ -37,7 +42,7 @@ fetch(URLpeli)
         console.log("Error: " + e);
     })
 
-fetch(URLpeli)
+fetch(URLserie)
 .then(function(response){
     return response.json()
 })
@@ -47,14 +52,17 @@ fetch(URLpeli)
 
     let seriesdata = data.results
     
-    let b = document.querySelector(".muestrapeli") 
+    let b = document.querySelector(".muestraserie") 
     let series = ""
 
-    for (let i =0; i < seriesdata.length; i++){
+    for (i =0; i < seriesdata.length; i++){
         series += `<article> 
-                        <a href= "./detalle_movie.html?id=${peliculasdata[i].id}" > <p>${peliculasdata[i].title}</p> </a>
-                        <p> Resumen: ${peliculasdata[i].overview} </p>
-                     </article> `
+                        <a href= "./detalle_ser.html?id=${seriesdata[i].id}" > <p>${seriesdata[i].name}</p> </a>
+                        <section class= "busquedabox">
+                            <img src ="https://image.tmdb.org/t/p/w154/${seriesdata[i].poster_path}" >
+                            <p> Resumen: ${seriesdata[i].overview} </p>
+                        </section>
+                    </article> `
     }
     b.innerHTML = series
     })
