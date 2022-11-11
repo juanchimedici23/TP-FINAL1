@@ -28,3 +28,11 @@ fetch(URLpeli)
     .catch(function(e){
         console.log("Error: " + e);
     })
+
+
+let valor = document.querySelector("form")
+
+valor.addEventListener("submit",function(event){
+    event.preventDefault()
+
+})
