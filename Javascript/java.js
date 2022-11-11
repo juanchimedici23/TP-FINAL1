@@ -19,9 +19,19 @@ fetch(URLpeli)
 .then(function(data){
     
     console.log(data);
-    /* let datapeli = data.results
+
+    let peliculasdata = data.results
     
-    let a = document.querySelector(".busqueda") */
+    let a = document.querySelector(".muestrapeli") 
+    let peliculas = ""
+
+    for (let i =0; i < peliculasdata.length; i++){
+        peliculas += `<article> 
+                        <a href= "./detalle_movie.html?id=${peliculasdata[i].id}" > <p>${peliculasdata[i].title}</p> </a>
+                        <p> Resumen: ${peliculasdata[i].overview} </p>
+                     </article> `
+    }
+    a.innerHTML = peliculas
     })
     .catch(function(e){
         console.log("Error: " + e);
