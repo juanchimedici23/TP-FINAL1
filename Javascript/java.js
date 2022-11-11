@@ -10,7 +10,7 @@ console.log(query)
 
 let URLpeli = `https://api.themoviedb.org/3/search/movie?query=${query}&api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US&page=1&include_adult=false`
 
-let URLserie = "https://api.themoviedb.org/3/tv/{tv_id}?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US"
+let URLserie = `https://api.themoviedb.org/3/search/tv?quey=${query}&api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US&page=1&include_adult=false`
 
 fetch(URLpeli)
 .then(function(response){
@@ -37,10 +37,27 @@ fetch(URLpeli)
         console.log("Error: " + e);
     })
 
+fetch(URLpeli)
+.then(function(response){
+    return response.json()
+})
+.then(function(data){
+    
+    console.log(data);
 
-/* let valor = document.querySelector("form")
+    let seriesdata = data.results
+    
+    let b = document.querySelector(".muestrapeli") 
+    let series = ""
 
-valor.addEventListener("submit",function(event){
-    event.preventDefault()
-
-}) */
+    for (let i =0; i < seriesdata.length; i++){
+        series += `<article> 
+                        <a href= "./detalle_movie.html?id=${peliculasdata[i].id}" > <p>${peliculasdata[i].title}</p> </a>
+                        <p> Resumen: ${peliculasdata[i].overview} </p>
+                     </article> `
+    }
+    b.innerHTML = series
+    })
+    .catch(function(e){
+        console.log("Error: " + e);
+    })
