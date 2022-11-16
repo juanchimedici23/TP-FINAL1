@@ -1,7 +1,9 @@
 
 let urlPeliPopulares = `https://api.themoviedb.org/3/movie/popular?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US&page=1`
 
+let urlSeriesPopulares =`https://api.themoviedb.org/3/tv/popular?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US&page=1`
 
+let urlPeliValorada = `https://api.themoviedb.org/3/movie/top_rated?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US&page=1`
 
 fetch(urlPeliPopulares)
 .then(function(response){
@@ -13,22 +15,81 @@ fetch(urlPeliPopulares)
 
     let peliculasdata = data.results
     
-    let a = document.querySelector(".pelishome") 
+    let a = document.querySelector(".pelis") 
     let peliculas = ""
 
-    for (i =0; i < peliculasdata.length; i++){
+    for (i =0; i < 5; i++){
         peliculas += `
-        <article class="art">
-            <h2>Películas populares</h2>
-            <ul class="pelis">
                 <li>
                     <h3>${peliculasdata[i].title}</h3>
                     <a href="./detalle_movie.html"> <img src="https://image.tmdb.org/t/p/w154/${peliculasdata[i].poster_path}" alt="Spiderman"></a>
                     <div class="bajofotos">
-                        <p>${peliculasdata[i].release_date}</p> <p>Rating: ${peliculasdata[i].vote.average}</p> <i class="fa-regular fa-star"></i></i>
+                        <p>${peliculasdata[i].release_date}</p> <p>Rating: ${peliculasdata[i].vote_average}</p> <i class="fa-regular fa-star"></i></i>
                     </div>
                 </li>
-        </article> 
+        
+        `
+    }
+    a.innerHTML = peliculas
+    })
+    .catch(function(e){
+        console.log("Error: " + e);
+    })
+
+fetch(urlSeriesPopulares)
+.then(function(response){
+        return response.json()
+    })
+.then(function(data){
+        
+        console.log(data);
+    
+        let seriesdata = data.results
+        
+        let a = document.querySelector(".series") 
+        let series = ""
+    
+        for (i =0; i < 5; i++){
+            series += `
+                    <li>
+                        <h3>${seriesdata[i].name}</h3>
+                        <a href="./detalle_movie.html"> <img src="https://image.tmdb.org/t/p/w154/${seriesdata[i].poster_path}" alt="Spiderman"></a>
+                        <div class="bajofotos">
+                            <p>${seriesdata[i].first_air_date}</p> <p>Rating: ${seriesdata[i].vote_average}</p> <i class="fa-regular fa-star"></i></i>
+                        </div>
+                    </li>
+            
+            `
+        }
+        a.innerHTML = series
+        })
+        .catch(function(e){
+            console.log("Error: " + e);
+        })
+
+fetch(urlPeliValorada)
+.then(function(response){
+    return response.json()
+})
+.then(function(data){
+    
+    console.log(data);
+
+    let peliculasdata = data.results
+    
+    let a = document.querySelector(".pelis") 
+    let peliculas = ""
+
+    for (i =0; i < 5; i++){
+        peliculas += `
+                <li>
+                    <h3>${peliculasdata[i].title}</h3>
+                    <a href="./detalle_movie.html"> <img src="https://image.tmdb.org/t/p/w154/${peliculasdata[i].poster_path}" alt="Spiderman"></a>
+                    <div class="bajofotos">
+                        <p>${peliculasdata[i].release_date}</p> <p>Rating: ${peliculasdata[i].vote_average}</p> <i class="fa-regular fa-star"></i></i>
+                    </div>
+                </li>
+        
         `
     }
     a.innerHTML = peliculas

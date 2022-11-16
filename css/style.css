@@ -123,6 +123,32 @@ height: 170px;
 font-size: 15px;
 }
 
+.series{
+  text-emphasis: none;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  flex-wrap: nowrap;
+  background-color: rgb(26, 24, 24);
+  border-radius: 15px;
+  padding: 0px;
+}
+
+.series img{
+  width: 250px;
+  height: 150px;
+  border-radius: 15px;
+}
+
+.series img:hover{
+  width: 270px;
+  height: 170px;
+}
+
+.series h3{
+  font-size: 15px;
+}
+
 hr {
 color: #eee;
 }
@@ -338,6 +364,14 @@ list-style: none;
 .pelis li{
   margin-left: 8px;
 }
+
+.series{
+  display: flex;
+  flex-direction: column;
+}
+.series li{
+  margin-left: 8px;
+}
 h2{
   margin-left: 10px;
 }
@@ -404,6 +438,10 @@ h2{
 .pelis{
   padding: 8px;
 }
+
+.series{
+  padding: 8px;
+}
 .conteiner_movie div{
   position: relative;
   top: -60px;
@@ -430,4 +468,10 @@ h2{
     }
     
   }
+
+
+
+
+
+
 
