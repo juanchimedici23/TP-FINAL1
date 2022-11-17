@@ -77,11 +77,11 @@ fetch(urlPeliValorada)
 
     let peliculasdata = data.results
     
-    let a = document.querySelector(".pelis") 
-    let peliculas = ""
+    let b = document.querySelector(".pelisvaloradas") 
+    let peliculas_valoradas = ""
 
     for (i =0; i < 5; i++){
-        peliculas += `
+        peliculas_valoradas += `
                 <li>
                     <h3>${peliculasdata[i].title}</h3>
                     <a href="./detalle_movie.html"> <img src="https://image.tmdb.org/t/p/w154/${peliculasdata[i].poster_path}" alt="Spiderman"></a>
@@ -92,7 +92,7 @@ fetch(urlPeliValorada)
         
         `
     }
-    a.innerHTML = peliculas
+    b.innerHTML = peliculas_valoradas
     })
     .catch(function(e){
         console.log("Error: " + e);
