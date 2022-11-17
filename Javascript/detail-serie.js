@@ -3,8 +3,8 @@ let queryStringObj = new URLSearchParams(queryString);
 const query = queryStringObj.get("buscador"); /*cambiar por lo que funciona, despues de hacer home*/
 
 console.log(query)
-let api_key = "1c7b96c9c6844bd81ab3f6d24f285c12"
-let serie = `https://api.themoviedb.org/3/tv/{tv_id}?api_key=${api_key}&language=en-US`
+
+let serie = `https://api.themoviedb.org/3/tv/{tv_id}?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US`
 
 fetch(serie)
 .then(function(response){

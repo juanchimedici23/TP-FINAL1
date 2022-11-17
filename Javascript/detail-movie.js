@@ -1,12 +1,12 @@
 let queryString = location.search;
 let queryStringObj = new URLSearchParams(queryString);
-const query = queryStringObj.get("buscador"); /* cambiarlo despues de armar el home */
+let id = queryStringObj.get("id"); /* cambiarlo despues de armar el home */
 
-console.log(query)
+console.log(id)
 
 
-let api_key2 = "1c7b96c9c6844bd81ab3f6d24f285c12"
-let peli = `https://api.themoviedb.org/3/movie/{movie_id}?api_key=${api_key}&language=en-U`
+
+let peli = `https://api.themoviedb.org/3/movie/${id}?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-U`
 
 fetch(peli)
 .then(function(response){
