@@ -123,6 +123,30 @@ height: 270px;
 font-size: 15px;
 }
 
+.pelisvaloradas{
+  text-emphasis: none;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  flex-wrap: nowrap;
+  background-color: rgb(26, 24, 24);
+  border-radius: 15px;
+  padding: 0px;
+}
+.pelisvaloradas img{
+  width: 170px;
+  height: 250px;
+  border-radius: 15px;
+  }
+.pelisvaloradas img:hover {
+  width: 190px;
+  height: 270px;
+  }
+.pelisvaloradas h3 {
+  font-size: 15px;
+  }
+  
+
 .series{
   text-emphasis: none;
   display: flex;
