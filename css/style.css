@@ -149,6 +149,32 @@ font-size: 15px;
   font-size: 15px;
 }
 
+.pelisValor{
+  text-emphasis: none;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  flex-wrap: nowrap;
+  background-color: rgb(26, 24, 24);
+  border-radius: 15px;
+  padding: 0px;
+}
+
+.pelisValor img{
+  width: 250px;
+  height: 150px;
+  border-radius: 15px;
+}
+
+.pelisValor img:hover{
+  width: 270px;
+  height: 170px;
+}
+
+.pelisValor h3{
+  font-size: 15px;
+}
+
 hr {
 color: #eee;
 }
@@ -212,7 +238,7 @@ font-weight: 350;
 
 .bajofotos{
 display: flex;
-justify-content: space-between;
+justify-content: space-around;
 }
 
 .bajofotos i{
@@ -350,7 +376,7 @@ list-style: none;
   margin: none;
   justify-content: flex-start;
 }
-.columna{
+.columna{ 
   display: flex;
   justify-content: flex-start;
   position: relative;
@@ -370,6 +396,14 @@ list-style: none;
   flex-direction: column;
 }
 .series li{
+  margin-left: 8px;
+}
+
+.pelisValor{
+  display: flex;
+  flex-direction: column;
+}
+.pelisValor li{
   margin-left: 8px;
 }
 h2{

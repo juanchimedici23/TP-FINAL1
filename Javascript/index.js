@@ -77,14 +77,14 @@ fetch(urlPeliValorada)
 
     let peliculasdata = data.results
     
-    let a = document.querySelector(".pelis") 
+    let a = document.querySelector(".pelisValor") 
     let peliculas = ""
 
     for (i =0; i < 5; i++){
         peliculas += `
                 <li>
                     <h3>${peliculasdata[i].title}</h3>
-                    <a href="./detalle_movie.html"> <img src="https://image.tmdb.org/t/p/w154/${peliculasdata[i].poster_path}" alt="Spiderman"></a>
+                    <a href="./detalle_movie.html"> <img src="https://image.tmdb.org/t/p/w300/${peliculasdata[i].poster_path}" alt="Spiderman"></a>
                     <div class="bajofotos">
                         <p>${peliculasdata[i].release_date}</p> <p>Rating: ${peliculasdata[i].vote_average}</p> <i class="fa-regular fa-star"></i></i>
                     </div>
