@@ -1,5 +1,3 @@
-/* Search */
-
 let queryString = location.search;
 let queryStringObj = new URLSearchParams(queryString);
 const query = queryStringObj.get("buscador");
@@ -71,7 +69,3 @@ fetch(URLserie)
         console.log("Error: " + e);
         
     })
-
-
-
-
