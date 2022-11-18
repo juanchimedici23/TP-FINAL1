@@ -22,7 +22,7 @@ fetch(peli)
     let a = document.querySelector(".pelicula_elegida") 
 
     let peliculas = `<article> 
-                        <a href= "./detalle_movie.html?id=${peliculasdata.id}" > <p>${peliculasdata.title}</p> </a>
+                        <p>${peliculasdata.title}</p>
                         <section class= "busquedabox">
                         <a href= "./detalle_movie.html?id=${peliculasdata.id}" ><img src ="https://image.tmdb.org/t/p/w154/${peliculasdata.poster_path}" > </a>
                             <div class= "resumenbusqueda">
