@@ -4,12 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Document</title>
 </head>
 <body>
+    <header>
+      
+        <section>
+    
+            <article class = "logo">
+             <img id="arriba" src="./css/img/PIRATE MOVIES.gif" alt="PIRATE MOVIES">
+             </article>
+    
+            <div class="menu">
+                <a class="active" href="index.html">Home</a>
+                <a href="./favoritos.html">Favoritos</a>
+                <a href="./generos.html">Generos</a>
+                <form class="busqueda" action="./resultsprueba.html" method="get">
+                    <input type="text" name = "buscador" placeholder="Buscar x nombre o género">
+                    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+                </form>  
+               
+            </div>
+    
+        </section>
+    
+    </header>
     <section class="serie_seleccionada"></section>
 
+    <footer>
 
+        <hr>
+        <div class="logo">
+        <a href="#arriba"> <img class="logo" src="./css/img/PIRATE-MOVIES-unscreen.gif" alt="PIRATE MOVIES"> </a>
+        <a href="https://www.themoviedb.org/"> <img class="logo2" src="./css/img/logotmdb.svg" alt="The Movie DB"></a>
+        </div>
+        <div class="developers">
+        <h5>Juan Medici</h5><h5>Augusto Augier</h5><h5>Mateo Podetti</h5>
+        </div> 
+        <div class="developers">
+            <p>© Reserved rigths for Pirate Movies and Digital House</p>
+            <p>No copyrigth infringment intended</p>
+
+        </div>
+    </footer>
     <script src="./Javascript/detail-serie.js"></script>
 </body>
 </html>

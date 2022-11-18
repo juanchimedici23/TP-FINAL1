@@ -1,10 +1,9 @@
 let queryString = location.search;
 let queryStringObj = new URLSearchParams(queryString);
-const query = queryStringObj.get("buscador"); /*cambiar por lo que funciona, despues de hacer home*/
+let id = queryStringObj.get("id"); 
+console.log(id)
 
-console.log(query)
-
-let serie = `https://api.themoviedb.org/3/tv/{tv_id}?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US`
+let serie = `https://api.themoviedb.org/3/tv/${id}?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US`
 
 fetch(serie)
 .then(function(response){
@@ -14,20 +13,18 @@ fetch(serie)
     
     console.log(data);
 
-    let seriesdata = data.results
+    let seriesdata = data
     
-    let b = document.querySelector(".muestraserie") 
-    let series = ""
-
-    for (i =0; i < seriesdata.length; i++){
-        series += `<article> 
-                        <a href= "./detalle_ser.html?id=${seriesdata[i].id}" > <p>${seriesdata[i].name}</p> </a>
+    let b = document.querySelector(".serie_seleccionada") 
+    
+    let series = `<article> 
+                        <a href= "./detalle_ser.html?id=${seriesdata.id}" > <p>${seriesdata.name}</p> </a>
                         <section class= "busquedabox">
-                            <img src ="https://image.tmdb.org/t/p/w154/${seriesdata[i].poster_path}" >
-                            <p> Resumen: ${seriesdata[i].overview} </p>
+                        <a href= "./detalle_ser.html?id=${seriesdata.id}" ><img src ="https://image.tmdb.org/t/p/w154/${seriesdata.poster_path}" ></a>
+                            <p> Resumen: ${seriesdata.overview} </p>
                         </section>
                     </article> `
-    }
+    
     b.innerHTML = series
     })
 

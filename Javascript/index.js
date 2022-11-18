@@ -1,4 +1,3 @@
-
 let urlPeliPopulares = `https://api.themoviedb.org/3/movie/popular?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US&page=1`
 
 let urlSeriesPopulares =`https://api.themoviedb.org/3/tv/popular?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US&page=1`
@@ -22,7 +21,7 @@ fetch(urlPeliPopulares)
         peliculas += `
                 <li>
                     <h3>${peliculasdata[i].title}</h3>
-                    <a href="./detail-movie.html"> <img src="https://image.tmdb.org/t/p/w154/${peliculasdata[i].poster_path}" alt="Spiderman"></a>
+                    <a href="./detail-movie.html?id=${peliculasdata[i].id}"> <img src="https://image.tmdb.org/t/p/w154/${peliculasdata[i].poster_path}" alt="Spiderman"></a>
                     <div class="bajofotos">
                         <p>${peliculasdata[i].release_date}</p> <p>Rating: ${peliculasdata[i].vote_average}</p> <i class="fa-regular fa-star"></i></i>
                     </div>
@@ -53,7 +52,7 @@ fetch(urlSeriesPopulares)
             series += `
                     <li>
                         <h3>${seriesdata[i].name}</h3>
-                        <a href="./detalle_movie.html"> <img src="https://image.tmdb.org/t/p/w154/${seriesdata[i].poster_path}" alt="Spiderman"></a>
+                        <a href="./detail-serie.html?id=${seriesdata[i].id}"> <img src="https://image.tmdb.org/t/p/w154/${seriesdata[i].poster_path}" alt="Spiderman"></a>
                         <div class="bajofotos">
                             <p>${seriesdata[i].first_air_date}</p> <p>Rating: ${seriesdata[i].vote_average}</p> <i class="fa-regular fa-star"></i></i>
                         </div>
@@ -84,7 +83,7 @@ fetch(urlPeliValorada)
         peliculas_valoradas += `
                 <li>
                     <h3>${peliculasdata[i].title}</h3>
-                    <a href="./detalle_movie.html"> <img src="https://image.tmdb.org/t/p/w300/${peliculasdata[i].poster_path}" alt="Spiderman"></a>
+                    <a href="./detail-movie.html?id=${peliculasdata[i].id}"> <img src="https://image.tmdb.org/t/p/w154/${peliculasdata[i].poster_path}" alt="Spiderman"></a>
                     <div class="bajofotos">
                         <p>${peliculasdata[i].release_date}</p> <p>Rating: ${peliculasdata[i].vote_average}</p> <i class="fa-regular fa-star"></i></i>
                     </div>
@@ -97,3 +96,17 @@ fetch(urlPeliValorada)
     .catch(function(e){
         console.log("Error: " + e);
     })
+
+/* let formulario = document.querySelector("form");			
+let campoBuscar = document.querySelector(".campoBuscar");	
+let campoModificar = document.querySelector(".menu")
+
+formulario.addEventListener('submit', function(event) {
+	event.preventDefault();  		
+	if ( campoBuscar.value == '' ) {	
+        campoModificar.innerHTML += `<p>El campo esta vacio,complete con una serie o pelicula</p>` 
+    	
+} else {
+    this.submit()			
+}
+}) */
