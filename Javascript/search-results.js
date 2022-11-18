@@ -23,19 +23,24 @@ fetch(URLpeli)
     let a = document.querySelector(".muestrapeli") 
     let peliculas = ""
 
-    for (i =0; i < peliculasdata.length; i++){
-        peliculas += `<article> 
-                        <a href= "./detalle_movie.html?id=${peliculasdata[i].id}" > <p>${peliculasdata[i].title}</p> </a>
-                        <section class= "busquedabox">
-                            <img src ="https://image.tmdb.org/t/p/w154/${peliculasdata[i].poster_path}" >
-                            <div class= "resumenbusqueda">
-                                <p> Resumen: ${peliculasdata[i].overview} </p>
-                            </div>
-                        </section>
-                     </article> `
+    if(peliculasdata.length === 0) {
+        //mete p con no se encontraron resultados HACER LO MISMO QUE CON LAS SERIES
+    } else {
+        for (i =0; i < peliculasdata.length; i++){
+            peliculas += `<article> 
+                            <a href= "./detalle_movie.html?id=${peliculasdata[i].id}" > <p>${peliculasdata[i].title}</p> </a>
+                            <section class= "busquedabox">
+                                <img src ="https://image.tmdb.org/t/p/w154/${peliculasdata[i].poster_path}" >
+                                <div class= "resumenbusqueda">
+                                    <p> Resumen: ${peliculasdata[i].overview} </p>
+                                </div>
+                            </section>
+                         </article> `
+        }
+        a.innerHTML = peliculas
     }
-    a.innerHTML = peliculas
-    })
+})
+
     .catch(function(e){
         console.log("Error: " + e);
     })

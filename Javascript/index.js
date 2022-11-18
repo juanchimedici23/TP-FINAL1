@@ -97,16 +97,16 @@ fetch(urlPeliValorada)
         console.log("Error: " + e);
     })
 
-/* let formulario = document.querySelector("form");			
-let campoBuscar = document.querySelector(".campoBuscar");	
-let campoModificar = document.querySelector(".menu")
+ let formulario = document.querySelector("form");			
+let campoBuscar = document.querySelector(".buscador");	
+let errorBusqueda = document.querySelector(".errorBusqueda")
 
 formulario.addEventListener('submit', function(event) {
-	event.preventDefault();  		
-	if ( campoBuscar.value == '' ) {	
-        campoModificar.innerHTML += `<p>El campo esta vacio,complete con una serie o pelicula</p>` 
-    	
-} else {
-    this.submit()			
-}
-}) */
+	event.preventDefault();  
+
+	if (campoBuscar.value === '' ) {	
+        errorBusqueda.innerHTML += `El campo esta vacio,complete con una serie o pelicula` 
+    } else {
+        this.submit()			
+    }
+}) 
