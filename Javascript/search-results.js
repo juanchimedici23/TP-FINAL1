@@ -10,6 +10,8 @@ let URLpeli = `https://api.themoviedb.org/3/search/movie?query=${query}&api_key=
 
 let URLserie = `https://api.themoviedb.org/3/search/tv?query=${query}&api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US&page=1&include_adult=false`
 
+let caso_particular = document.querySelector(".sin_resultados")
+
 fetch(URLpeli)
 .then(function(response){
     return response.json()
@@ -22,9 +24,8 @@ fetch(URLpeli)
     
     let a = document.querySelector(".muestrapeli") 
     let peliculas = ""
-
     if(peliculasdata.length === 0) {
-        //mete p con no se encontraron resultados HACER LO MISMO QUE CON LAS SERIES
+        caso_particular.innerHTML += "No se encontraron resultados"
     } else {
         for (i =0; i < peliculasdata.length; i++){
             peliculas += `<article> 
@@ -57,20 +58,25 @@ fetch(URLserie)
     
     let b = document.querySelector(".muestraserie") 
     let series = ""
-
-    for (i =0; i < seriesdata.length; i++){
-        series += `<article> 
+        if(peliculasdata.length === 0) {
+        caso_particular.innerHTML += "No se encontraron resultados"
+     }  else {
+            for (i =0; i < seriesdata.length; i++){
+                series += `<article> 
                         <a href= "./detalle_ser.html?id=${seriesdata[i].id}" > <p>${seriesdata[i].name}</p> </a>
                         <section class= "busquedabox">
-                            <img src ="https://image.tmdb.org/t/p/w154/${seriesdata[i].poster_path}" >
+                                <img src ="https://image.tmdb.org/t/p/w154/${seriesdata[i].poster_path}" >
                             <p> Resumen: ${seriesdata[i].overview} </p>
                         </section>
                     </article> `
-    }
-    b.innerHTML = series
+}
+b.innerHTML = series}     
+    
+        
     })
 
     .catch(function(e){
         console.log("Error: " + e);
         
     })
+    
