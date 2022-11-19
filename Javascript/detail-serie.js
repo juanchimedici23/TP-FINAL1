@@ -15,17 +15,34 @@ fetch(serie)
     
     console.log(data);
 
-    let seriesdata = data
+    let genero = []
+    let listaGenero = data.genres
+
     
+    for (let i = 0; i < listaGenero.length; i++) {
+        genero.push(`${listaGenero[i].name}`)
+    }
+
     let b = document.querySelector(".serie_seleccionada") 
     
     let series = `<article> 
-                        <p>${seriesdata.name}</p>
-                        <section class= "busquedabox">
-                        <a href= "./detalle_ser.html?id=${seriesdata.id}" ><img src ="https://image.tmdb.org/t/p/w154/${seriesdata.poster_path}" ></a>
-                            <p> Resumen: ${seriesdata.overview} </p>
-                        </section>
-                    </article> `
+                    <h1 class="top_y_BBAD">${data.name}</h1>
+                    <section class="conteiner_movie">
+                        <div class="tpgn">
+                            <img src ="https://image.tmdb.org/t/p/w780/${data.poster_path}" > 
+                        </div>
+                        <div class="details" id="letras">
+                            <p><strong>Sinópsis:</strong> ${data.overview}</p>
+                            <ul>
+                                <li><strong>Rating:</strong> ${data.vote_average}</li>
+                                <li><strong>Fecha de estreno:</strong> ${data.first_air_date}</li>
+                                <li><strong>Género:</strong></li>
+                                <li>${genero}</li>
+                                <li><strong>Get Watch Providers:</strong> </li>
+                            </ul>
+                        </div>
+                    </section>
+                </article> `
     
     b.innerHTML = series
     })

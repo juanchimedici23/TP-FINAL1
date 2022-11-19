@@ -20,13 +20,12 @@ fetch(peli)
     let peliculasdata = data
 
 
-    let genero = ""
+    let genero = []
     let listaGenero = peliculasdata.genres
 
     
     for (let i = 0; i < listaGenero.length; i++) {
-        genero += `•${listaGenero[i].name} 
-`
+        genero.push(`${listaGenero[i].name}`)
     }
     
     let a = document.querySelector(".pelicula_elegida") 
