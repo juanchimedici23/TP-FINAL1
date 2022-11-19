@@ -29,9 +29,9 @@ fetch(URLpeli)
     } else {
         for (i =0; i < peliculasdata.length; i++){
             peliculas += `<article> 
-                            <a href= "./detalle_movie.html?id=${peliculasdata[i].id}" > <p>${peliculasdata[i].title}</p> </a>
+                            <a href= "./detail-movie.html?id=${peliculasdata[i].id}" > <p>${peliculasdata[i].title}</p> </a>
                             <section class= "busquedabox">
-                                <img src ="https://image.tmdb.org/t/p/w154/${peliculasdata[i].poster_path}" >
+                            <a href= "./detail-movie.html?id=${peliculasdata[i].id}" ><img src ="https://image.tmdb.org/t/p/w154/${peliculasdata[i].poster_path}" ></a>
                                 <div class= "resumenbusqueda">
                                     <p> Resumen: ${peliculasdata[i].overview} </p>
                                 </div>
@@ -63,9 +63,9 @@ fetch(URLserie)
      }  else {
             for (i =0; i < seriesdata.length; i++){
                 series += `<article> 
-                        <a href= "./detalle_ser.html?id=${seriesdata[i].id}" > <p>${seriesdata[i].name}</p> </a>
+                        <a href= "./detail-serie.html?id=${seriesdata[i].id}" > <p>${seriesdata[i].name}</p> </a>
                         <section class= "busquedabox">
-                                <img src ="https://image.tmdb.org/t/p/w154/${seriesdata[i].poster_path}" >
+                            <a href= "./detail-serie.html?id=${seriesdata[i].id}" ><img src ="https://image.tmdb.org/t/p/w154/${seriesdata[i].poster_path}" ></a>
                             <p> Resumen: ${seriesdata[i].overview} </p>
                         </section>
                     </article> `
