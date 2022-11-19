@@ -18,20 +18,43 @@ fetch(peli)
     console.log(data);
 
     let peliculasdata = data
+
+
+    let genero = ""
+    let listaGenero = peliculasdata.genres
+
+    
+    for (let i = 0; i < listaGenero.length; i++) {
+        genero += `•${listaGenero[i].name} 
+`
+    }
     
     let a = document.querySelector(".pelicula_elegida") 
 
     let peliculas = `<article> 
-                        <p>${peliculasdata.title}</p>
-                        <section class= "busquedabox">
-                        <a href= "./detalle_movie.html?id=${peliculasdata.id}" ><img src ="https://image.tmdb.org/t/p/w154/${peliculasdata.poster_path}" > </a>
-                            <div class= "resumenbusqueda">
-                                <p> Resumen: ${peliculasdata.overview} </p>
+                        <h1 class="top_y_BBAD">${peliculasdata.title}</h1>
+                        <section class="conteiner_movie">
+                            <div class="tpgn">
+                                <img src ="https://image.tmdb.org/t/p/w780/${peliculasdata.poster_path}" > 
+                            </div>
+                            <div class="details" id="letras">
+                                <p><strong>Sinópsis:</strong> ${peliculasdata.overview}</p>
+                                <ul>
+                                    <li><strong>Rating:</strong> ${peliculasdata.vote_average}</li>
+                                    <li><strong>Fecha de estreno:</strong> ${peliculasdata.release_date}</li>
+                                    <li><strong>Duración:</strong> ${peliculasdata.runtime} minutes</li>
+                                    <li><strong>Género:</strong> ${genero}</li>
+                                    <li><strong>Get Watch Providers:</strong> ${genero}</li>
+                                </ul>
                             </div>
                         </section>
                      </article> `
     
     a.innerHTML += peliculas
+
+    
+    
+
     
 })
     .catch(function(e){
