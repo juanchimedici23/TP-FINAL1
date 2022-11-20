@@ -62,30 +62,9 @@ fetch(peli)
                         
     a.innerHTML += peliculas
 
-    let boton = document.querySelector("#fav")
-let icon = document.querySelector(".fa-star")
-
-if (favoritos.includes(id)) {
-    icon.classList.remove("fa-regular")
-    icon.classList.add("fa-solid")
-}
-boton.addEventListener("click", function(e){
-    e.preventDefault()
-    if (icon.classList.contains("fa-solid")) {
-        let indice = favoritos.indexOf(id)
-        favoritos.splice(indice,1)
-        icon.classList.remove("fa-solid")
-        icon.classList.add("fa-regular")
-        
-    } else {
-        favoritos.push(id)
-        icon.classList.remove("fa-regular")
-        icon.classList.add("fa-solid")
-    }
-    let favoritosToString = JSON.stringify(favoritos)
-    localStorage.setItem("favoritos",favoritosToString)
-    console.log(localStorage);
-})
+    
+    
+    
 
 
 
@@ -97,7 +76,7 @@ boton.addEventListener("click", function(e){
 })
 
 let recomendaciones = document.querySelector("#rec");
-let seccion_recs = domunet.querySelector("#recs_eleguidas");
+let seccion_recs = document.querySelector("#recs_eleguidas");
 
 recomendaciones.addEventListener("click",function(recs){
     recs.preventDefault()
@@ -105,5 +84,37 @@ recomendaciones.addEventListener("click",function(recs){
     seccion_recs.style.display = "block" 
     let guardar = localStorage.getItem("Recomendaciones")
 })
-console.log(localStorage)
 
+
+
+window.addEventListener("load", function(event){ 
+    event.preventDefault()
+    let boton = document.querySelector("#fav")
+    let icon = document.querySelector(".fa-star")
+    console.log(boton);
+    if (favoritos.includes(id)) {
+        icon.classList.remove("fa-regular")
+        icon.classList.add("fa-solid")
+    }
+    boton.addEventListener("click", function(e){
+        e.preventDefault()
+     if (icon.classList.contains("fa-solid")) {
+        let indice = favoritos.indexOf(id)
+        favoritos.splice(indice,1)
+        icon.classList.remove("fa-solid")
+        icon.classList.add("fa-regular")
+        
+    } else {
+        favoritos.push(id)
+        icon.classList.remove("fa-regular")
+        icon.classList.add("fa-solid")
+    }
+    let favoritosToString = JSON.stringify(favoritos)
+    let guardarfav = localStorage.setItem("favoritos",favoritosToString)
+    console.log(localStorage);
+    })
+    localStorage.setItem(guardarfav)
+    })
+    console.log(id)
+    console.log(localStorage)   
+    
