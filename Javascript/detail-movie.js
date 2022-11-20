@@ -1,13 +1,19 @@
 let queryString = location.search;
 let queryStringObj = new URLSearchParams(queryString);
-let id_peli = queryStringObj.get('id');
-
-
-let peli = `https://api.themoviedb.org/3/movie/${id_peli}?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US`
+let id = queryStringObj.get('id');
+localStorage.clear()
+let peli = `https://api.themoviedb.org/3/movie/${id}?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US`
 
 let urlPeliValorada = `https://api.themoviedb.org/3/movie/top_rated?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US&page=1`
 
+let favoritos = []
 
+let recuperoStorage = localStorage.getItem("favoritos")
+    
+if (recuperoStorage != null) {
+    favoritos = JSON.parse(recuperoStorage)
+}
+    
 
 fetch(peli)
 .then(function(response){
@@ -54,26 +60,40 @@ fetch(peli)
     a.innerHTML += peliculas
 
     let boton = document.querySelector("button")
-    let icon = document.querySelector(".fa-regular")
-    console.log(icon);
+let icon = document.querySelector(".fa-star")
 
-    boton.addEventListener("click", function(){
-        if (icon.classList.contains("fa-regular")) {
-            icon.classList.remove("fa-regular")
-            icon.classList.add("fa-solid")
-            
-        } else {
-            icon.classList.remove("fa-solid")
-            icon.classList.add("fa-regular")}
+if (favoritos.includes(id)) {
+    icon.classList.remove("fa-regular")
+    icon.classList.add("fa-solid")
+}
+boton.addEventListener("click", function(e){
+    e.preventDefault()
+    if (icon.classList.contains("fa-solid")) {
+        let indice = favoritos.indexOf(id)
+        favoritos.splice(indice,1)
+        icon.classList.remove("fa-solid")
+        icon.classList.add("fa-regular")
+           
+    } else {
+        favoritos.push(id)
+        icon.classList.remove("fa-regular")
+        icon.classList.add("fa-solid")
+        }
+    let favoritosToString = JSON.stringify(favoritos)
+    localStorage.setItem("favoritos",favoritosToString)
+    console.log(localStorage);
+})
             
         
 })
     
 
     
-})
+
     .catch(function(e){
         console.log("Error: " + e);
     })
+
+
 
 
