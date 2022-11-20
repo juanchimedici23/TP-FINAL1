@@ -111,12 +111,12 @@ padding: 0px;
 }
 
 .pelis img{
-width: 170px;
+width: 190px;
 height: 250px;
 border-radius: 15px;
 }
 .pelis img:hover {
-width: 190px;
+width: 210px;
 height: 270px;
 }
 .pelis h3 {
@@ -134,12 +134,12 @@ font-size: 15px;
   padding: 0px;
 }
 .pelisvaloradas img{
-  width: 170px;
+  width: 190px;
   height: 250px;
   border-radius: 15px;
   }
 .pelisvaloradas img:hover {
-  width: 190px;
+  width: 210px;
   height: 270px;
   }
 .pelisvaloradas h3 {
@@ -272,6 +272,10 @@ left: -13px;
 
 .separado{
 margin-left: 10px;
+}
+
+#recs_eleguidas{
+display: none;
 }
 
 /* Favoritos */
