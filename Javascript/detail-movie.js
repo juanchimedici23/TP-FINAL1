@@ -98,13 +98,13 @@ window.addEventListener("load", function(event){
     }
     boton.addEventListener("click", function(e){
         e.preventDefault()
-     if (icon.classList.contains("fa-solid")) {
-        let indice = favoritos.indexOf(id)
-        favoritos.splice(indice,1)
-        icon.classList.remove("fa-solid")
-        icon.classList.add("fa-regular")
+        if (icon.classList.contains("fa-solid")) {
+            let indice = favoritos.indexOf(id)
+            favoritos.splice(indice,1)
+            icon.classList.remove("fa-solid")
+            icon.classList.add("fa-regular")
         
-    } else {
+         } else {
         favoritos.push(id)
         icon.classList.remove("fa-regular")
         icon.classList.add("fa-solid")
