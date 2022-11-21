@@ -49,10 +49,7 @@ fetch(peli)
                                     <li><strong>Género:</strong> ${genero}</li>
                                     <li><strong>Get Watch Providers:</strong> ${data.production_companies.name}</li>
                                 </ul>
-                                <div id = "rec"><button type= "button-rec">"Get Recomendations"</button></div>
-                                <br>
-                                <div id = "fav"><button type= "button"><i class="fa-regular fa-star"></i></button></div>
-                                </div>
+                                
                         </section>
                         </article> `
     
@@ -81,9 +78,9 @@ recomendaciones.addEventListener("click",function(recs){
     recs.preventDefault()
     localStorage.setItem("Recomendaciones", True)
     seccion_recs.style.display = "block" 
-    let guardar = localStorage.getItem("Recomendaciones")
 })
 
+let guardar = localStorage.getItem("Recomendaciones")
 
     
 window.addEventListener("load", function(event){ 

@@ -1,3 +1,4 @@
+console.log(localStorage);
 let queryString = location.search;
 let queryStringObj = new URLSearchParams(queryString);
 let id = queryStringObj.get('id');
@@ -7,7 +8,6 @@ let peli = `https://api.themoviedb.org/3/movie/${id}?api_key=1c7b96c9c6844bd81ab
 let serie = `https://api.themoviedb.org/3/tv/${id}?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US`
 
 
-console.log(localStorage);
 
 fetch(peli)
 .then(function(response){
@@ -49,9 +49,6 @@ fetch(peli)
                                 </div>
                         </section>
                         </article> `
-    
-    
-
                         
     a.innerHTML += peliculas
 })
