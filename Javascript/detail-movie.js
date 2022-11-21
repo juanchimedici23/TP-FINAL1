@@ -102,12 +102,13 @@ let seccion_recs = document.querySelector("#recs_eleguidas");
 recomendaciones.addEventListener("click",function(recs){
     recs.preventDefault()
     localStorage.setItem("Recomendaciones", "True")
-    seccion_recs.style.display = "block" 
+    seccion_recs.style.display = "block"
 })
 
 let guardar = localStorage.getItem("Recomendaciones")
 
     
+
 window.addEventListener("load", function(event){ 
     event.preventDefault()
     let boton = document.querySelector("#fav")
