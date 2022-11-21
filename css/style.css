@@ -523,7 +523,14 @@ h2{
     .last2{
       display: none;
     }
-    
+  .pelis{
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .cont_peliXpeli{
+    display: flex;
+    justify-content: center;
+  }
   }
 
   

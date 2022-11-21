@@ -7,6 +7,9 @@ let id = queryStringObj.get('id');
 
 let favoritoPeli = JSON.parse(localStorage.getItem("favoritoPeli"))
 let favoritoSerie = JSON.parse(localStorage.getItem("favoritoSerie"))
+
+
+
 console.log(`Las peliculas favoritas tienen el id: ${favoritoPeli}
              Las series favoritas tienen el id: ${favoritoSerie}`)
 
@@ -25,6 +28,10 @@ function pelisFavoritas (id){
             
         let a = document.querySelector(".peliFavorita") 
         
+
+        
+
+
         let peliculas =`<article> 
                             <h1 class="top_y_BBAD">${data.title}</h1>
                             <section class="conteiner_movie">

@@ -6,6 +6,9 @@ let peli = `https://api.themoviedb.org/3/movie/${id}?api_key=1c7b96c9c6844bd81ab
 
 let urlPeliValorada = `https://api.themoviedb.org/3/movie/top_rated?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US&page=1`
 
+let watchproviders = `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=1c7b96c9c6844bd81ab3f6d24f285c12`
+
+
 let favoritoPeli = []
 
 let recuperoStorage = localStorage.getItem("favoritoPeli")
@@ -47,18 +50,40 @@ fetch(peli)
                                     <li><strong>Fecha de estreno:</strong> ${data.release_date}</li>
                                     <li><strong>Duración:</strong> ${data.runtime} minutes</li>
                                     <li><strong>Género:</strong> ${genero}</li>
-                                    <li><strong>Get Watch Providers:</strong> ${data.production_companies.name}</li>
+                                    <li><strong>Get Watch Providers:</strong> <p class = "providers"></p></li>
                                 </ul>
                                 
                         </section>
                         </article> `
     
-    
+
 
                         
     a.innerHTML += peliculas
 
+    fetch(watchproviders)
+        .then(function(response){
+            return response.json()
+        })
+        .then(function(data){
+
+            
+
+            let info = data.results
+            console.log(info);
+            let querywatch = document.querySelector(".providers")
+            for (let i = 0; i < info.length; i++) {
+                let agregado = `<a href="${info[i].link}"> <img src="https://image.tmdb.org/t/p/w92/${info[i].rent}" alt="Spiderman"></a>`
+                querywatch.innerHTML += agregado
+            }
+            
+
     
+
+        })
+        .catch(function(e){
+            console.log("Error: " + e);
+        })
     
     
 
@@ -76,7 +101,7 @@ let seccion_recs = document.querySelector("#recs_eleguidas");
 
 recomendaciones.addEventListener("click",function(recs){
     recs.preventDefault()
-    localStorage.setItem("Recomendaciones", True)
+    localStorage.setItem("Recomendaciones", "True")
     seccion_recs.style.display = "block" 
 })
 

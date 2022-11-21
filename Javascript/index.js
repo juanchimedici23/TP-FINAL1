@@ -24,7 +24,7 @@ fetch(urlPeliPopulares)
                     <h3>${peliculasdata[i].title}</h3>
                     <a href="./detail-movie.html?id=${peliculasdata[i].id}"> <img src="https://image.tmdb.org/t/p/w154/${peliculasdata[i].poster_path}" alt="Error"></a>
                     <div class="bajofotos">
-                        <p>${peliculasdata[i].release_date}</p> <p>Rating: ${peliculasdata[i].vote_average}</p> <i class="fa-regular fa-star"></i></i>
+                        <p>${peliculasdata[i].release_date}</p><p>Rating: ${peliculasdata[i].vote_average}</p> 
                     </div>
                 </li>
         
@@ -55,7 +55,7 @@ fetch(urlSeriesPopulares)
                         <h3>${seriesdata[i].name}</h3>
                         <a href="./detail-serie.html?id=${seriesdata[i].id}"> <img src="https://image.tmdb.org/t/p/w154/${seriesdata[i].poster_path}" alt="Spiderman"></a>
                         <div class="bajofotos">
-                            <p>${seriesdata[i].first_air_date}</p> <p>Rating: ${seriesdata[i].vote_average}</p> <i class="fa-regular fa-star"></i></i>
+                            <p>${seriesdata[i].first_air_date}</p> <p>Rating: ${seriesdata[i].vote_average}</p> 
                         </div>
                     </li>
             
@@ -82,11 +82,11 @@ fetch(urlPeliValorada)
 
     for (i =0; i < 5; i++){
         peliculas_valoradas += `
-                <li>
+                <li class = "cont_peliXpeli">
                     <h3>${peliculasdata[i].title}</h3>
                     <a href="./detail-movie.html?id=${peliculasdata[i].id}"> <img src="https://image.tmdb.org/t/p/w154/${peliculasdata[i].poster_path}" alt="Spiderman"></a>
                     <div class="bajofotos">
-                        <p>${peliculasdata[i].release_date}</p> <p>Rating: ${peliculasdata[i].vote_average}</p> <i class="fa-regular fa-star"></i></i>
+                        <p>${peliculasdata[i].release_date}</p> <p>Rating: ${peliculasdata[i].vote_average}</p> 
                     </div>
                 </li>
         
