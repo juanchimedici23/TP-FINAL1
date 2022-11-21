@@ -6,12 +6,12 @@ let peli = `https://api.themoviedb.org/3/movie/${id}?api_key=1c7b96c9c6844bd81ab
 
 let urlPeliValorada = `https://api.themoviedb.org/3/movie/top_rated?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US&page=1`
 
-let favoritos = []
+let favoritoPeli = []
 
-let recuperoStorage = localStorage.getItem("favoritos")
+let recuperoStorage = localStorage.getItem("favoritoPeli")
     
 if (recuperoStorage != null) {
-    favoritos = JSON.parse(recuperoStorage)
+    favoritoPeli = JSON.parse(recuperoStorage)
 }
 
 
@@ -88,28 +88,29 @@ window.addEventListener("load", function(event){
     let boton = document.querySelector("#fav")
     let icon = document.querySelector(".fa-star")
     console.log(boton);
-    if (favoritos.includes(id)) {
+    if (favoritoPeli.includes(id)) {
         icon.classList.remove("fa-regular")
         icon.classList.add("fa-solid")
     }
     boton.addEventListener("click", function(e){
         e.preventDefault()
         if (icon.classList.contains("fa-solid")) {
-            let indice = favoritos.indexOf(id)
-            favoritos.splice(indice,1)
+            let indice = favoritoPeli.indexOf(id)
+            favoritoPeli.splice(indice,1)
             icon.classList.remove("fa-solid")
             icon.classList.add("fa-regular")
         
          } else {
-        favoritos.push(id)
+        favoritoPeli.push(id)
         icon.classList.remove("fa-regular")
         icon.classList.add("fa-solid")
     }
-    let favoritosToString = JSON.stringify(favoritos)
-    let guardarfav = localStorage.setItem("favoritos",favoritosToString)
+    let favoritosToString = JSON.stringify(favoritoPeli)
+    localStorage.setItem("favoritoPeli",favoritosToString)
+    
     console.log(localStorage);
     })
-    localStorage.setItem(guardarfav)
+    
     })
     console.log(id)
     console.log(localStorage)   

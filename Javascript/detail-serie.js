@@ -5,7 +5,13 @@ console.log(id)
 
 let serie = `https://api.themoviedb.org/3/tv/${id}?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US`
 
+let favoritoSerie = []
 
+let recuperoStorage = localStorage.getItem("favoritoSerie")
+    
+if (recuperoStorage != null) {
+    favoritoSerie = JSON.parse(recuperoStorage)
+}
 
 fetch(serie)
 .then(function(response){
@@ -51,3 +57,46 @@ fetch(serie)
         console.log("Error: " + e);
         
     })
+
+    let recomendaciones = document.querySelector("#rec");
+    let seccion_recs = document.querySelector("#recs_eleguidas");
+    
+    recomendaciones.addEventListener("click",function(recs){
+        recs.preventDefault()
+        localStorage.setItem("Recomendaciones", True)
+        seccion_recs.style.display = "block" 
+    })
+    
+    let guardar = localStorage.getItem("Recomendaciones")
+    
+        
+    window.addEventListener("load", function(event){ 
+        event.preventDefault()
+        let boton = document.querySelector("#fav")
+        let icon = document.querySelector(".fa-star")
+        console.log(boton);
+        if (favoritoSerie.includes(id)) {
+            icon.classList.remove("fa-regular")
+            icon.classList.add("fa-solid")
+        }
+        boton.addEventListener("click", function(e){
+            e.preventDefault()
+            if (icon.classList.contains("fa-solid")) {
+                let indice = favoritoSerie.indexOf(id)
+                favoritoSerie.splice(indice,1)
+                icon.classList.remove("fa-solid")
+                icon.classList.add("fa-regular")
+            
+             } else {
+            favoritoSerie.push(id)
+            icon.classList.remove("fa-regular")
+            icon.classList.add("fa-solid")
+        }
+        let favoritosToString = JSON.stringify(favoritoSerie)
+        localStorage.setItem("favoritoSerie",favoritosToString)
+        console.log(localStorage);
+        })
+        
+        })
+        console.log(id)
+        console.log(localStorage)   

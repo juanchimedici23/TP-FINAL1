@@ -4,6 +4,7 @@ let urlSeriesPopulares =`https://api.themoviedb.org/3/tv/popular?api_key=1c7b96c
 
 let urlPeliValorada = `https://api.themoviedb.org/3/movie/top_rated?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US&page=1`
 
+
 fetch(urlPeliPopulares)
 .then(function(response){
     return response.json()
@@ -21,7 +22,7 @@ fetch(urlPeliPopulares)
         peliculas += `
                 <li>
                     <h3>${peliculasdata[i].title}</h3>
-                    <a href="./detail-movie.html?id=${peliculasdata[i].id}"> <img src="https://image.tmdb.org/t/p/w154/${peliculasdata[i].poster_path}" alt="Spiderman"></a>
+                    <a href="./detail-movie.html?id=${peliculasdata[i].id}"> <img src="https://image.tmdb.org/t/p/w154/${peliculasdata[i].poster_path}" alt="Error"></a>
                     <div class="bajofotos">
                         <p>${peliculasdata[i].release_date}</p> <p>Rating: ${peliculasdata[i].vote_average}</p> <i class="fa-regular fa-star"></i></i>
                     </div>
