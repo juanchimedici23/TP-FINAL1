@@ -201,6 +201,15 @@ hr {
 color: #eee;
 }
 
+#fav{
+  display: flex;
+  justify-content: center;
+}
+#fav button{
+  border: none;
+  background-color: rgba(255, 0, 0, 0.741);
+  align-self: center;
+}
 
 .tpgn{
 display: flex;
@@ -218,6 +227,10 @@ align-items: center;
 border-radius: 15px;
 background-repeat: no-repeat;
 background-size: 100%;
+}
+.conteiner_movie img{
+  padding: 1px;
+  border: 1px;
 }
 .conteiner_serie {
 display: flex;
@@ -250,6 +263,11 @@ padding: 20px;
 #letras {
 font-family: Arial, Helvetica, sans-serif;
 font-size: large;
+
+}
+.detalle{
+  display: flex;
+
 }
 
 .art h3{
@@ -531,6 +549,7 @@ h2{
     display: flex;
     justify-content: center;
   }
+  
   }
 
   

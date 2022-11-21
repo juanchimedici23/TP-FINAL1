@@ -37,7 +37,7 @@ fetch(peli)
     
     let a = document.querySelector(".pelicula_elegida") 
     
-    let peliculas = `<article> 
+    let peliculas = `<article class = "detalle"> 
                         <h1 class="top_y_BBAD">${data.title}</h1>
                         <section class="conteiner_movie">
                         <div class="tpgn">
