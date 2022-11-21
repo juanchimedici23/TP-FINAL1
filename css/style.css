@@ -207,10 +207,20 @@ color: #eee;
 }
 #fav button{
   border: none;
-  background-color: rgba(255, 0, 0, 0.741);
+  background-color: rgba(77, 77, 77, 0.741);
   align-self: center;
+  color: rgb(179, 179, 179);
 }
-
+#rec {
+  display: flex;
+  justify-content: center;
+}
+#rec button{
+  border: none;
+  background-color: rgba(77, 77, 77, 0.741);
+  align-self: center;
+  color: rgb(179, 179, 179);
+}
 .tpgn{
 display: flex;
 flex-wrap: nowrap;
@@ -228,6 +238,16 @@ border-radius: 15px;
 background-repeat: no-repeat;
 background-size: 100%;
 }
+.conteiner_movie2 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  }
 .conteiner_movie img{
   padding: 1px;
   border: 1px;

@@ -63,7 +63,7 @@ fetch(serie)
     
     recomendaciones.addEventListener("click",function(recs){
         recs.preventDefault()
-        localStorage.setItem("Recomendaciones", True)
+        localStorage.setItem("Recomendaciones", "True")
         seccion_recs.style.display = "block" 
     })
     

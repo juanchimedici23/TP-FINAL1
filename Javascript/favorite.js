@@ -34,7 +34,7 @@ function pelisFavoritas (id){
 
         let peliculas =`<article> 
                             <h1 class="top_y_BBAD">${data.title}</h1>
-                            <section class="conteiner_movie">
+                            <section class="conteiner_movie2">
                                 <div>
                                     <a href="./detail-movie.html?id=${id}"><img src ="https://image.tmdb.org/t/p/w154/${data.poster_path}" ></div></a>
                             </section>
