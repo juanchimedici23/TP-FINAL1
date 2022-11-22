@@ -55,11 +55,12 @@ fetch(peli)
                                 
                         </section>
                         </article> `
-    
-
-
-                        
+                  
     a.innerHTML += peliculas
+
+    for (a = 4; a > 0; a--) {
+        let recomendados = "XXXXXXXXX"
+    }
 
     fetch(watchproviders)
         .then(function(response){
