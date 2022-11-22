@@ -103,12 +103,11 @@ fetch(peli)
             agregar +=  `<li>
                 <h3>${info[i].title}</h3>
                 <a href="./detail-movie.html?id=${info[i].id}"> <img src="https://image.tmdb.org/t/p/w154/${info[i].poster_path}" alt="Error"></a>
+                <br>
             </li>
             `
         }
         provider.innerHTML = agregar
-
-
 
     })
     .catch(function(e){

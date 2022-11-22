@@ -1,11 +1,14 @@
 let queryString = location.search;
 let queryStringObj = new URLSearchParams(queryString);
 let id = queryStringObj.get("id"); 
+let recomendaciones = document.querySelector("#rec");
+let seccion_recs = document.querySelector("#recs_eleguidas");
+let provider = document.querySelector(".provider");
 console.log(id)
 
 let serie = `https://api.themoviedb.org/3/tv/${id}?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US`
 
-let serieRecomendada = `https://api.themoviedb.org/3/tv/{tv_id}/recommendations?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US&page=1`
+let urlserierecomendada = `https://api.themoviedb.org/3/tv/${id}/recommendations?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US&page=1`
 
 let favoritoSerie = []
 
@@ -60,8 +63,37 @@ fetch(serie)
         
     })
 
-    let recomendaciones = document.querySelector("#rec");
-    let seccion_recs = document.querySelector("#recs_eleguidas");
+    fetch(urlserierecomendada)
+    .then(function(response){
+        return response.json()
+    })
+    .then(function(data){
+        let info = data.results
+        console.log(info);
+        agregar = ""
+        if (info.length < 1) {
+            agregar = `<p>No hay series recomendadas</p>`
+        }
+        else{ 
+        for (let i = 0; i < 5; i++) {
+            agregar +=  `<li>
+                <h3>${info[i].name}</h3>
+                <a href="./detail-serie.html?id=${info[i].id}"> <img src="https://image.tmdb.org/t/p/w154/${info[i].poster_path}" alt="Error"></a>
+                <br>
+            </li>
+            `
+        }
+        }
+        provider.innerHTML = agregar
+
+
+
+    })
+    .catch(function(e){
+        console.log("Error: " + e);
+    })
+
+
     
     recomendaciones.addEventListener("click",function(recs){
         recs.preventDefault()
