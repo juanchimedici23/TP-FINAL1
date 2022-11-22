@@ -1,6 +1,10 @@
 let queryString = location.search;
 let queryStringObj = new URLSearchParams(queryString);
 let id = queryStringObj.get('id');
+let recomendaciones = document.querySelector("#rec");
+let seccion_recs = document.querySelector("#recs_eleguidas");
+let provider = document.querySelector(".provider");
+
 
 let peli = `https://api.themoviedb.org/3/movie/${id}?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US`
 
@@ -8,6 +12,7 @@ let urlPeliValorada = `https://api.themoviedb.org/3/movie/top_rated?api_key=1c7b
 
 let watchproviders = `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=1c7b96c9c6844bd81ab3f6d24f285c12`
 
+let urlpelirecomendada = `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US&page=1`
 
 let favoritoPeli = []
 
@@ -58,10 +63,6 @@ fetch(peli)
                   
     a.innerHTML += peliculas
 
-    for (a = 4; a > 0; a--) {
-        let recomendados = "XXXXXXXXX"
-    }
-
     fetch(watchproviders)
         .then(function(response){
             return response.json()
@@ -73,12 +74,14 @@ fetch(peli)
             let info = data.results
             console.log(info);
             let querywatch = document.querySelector(".providers")
-            for (let i = 0; i < info.length; i++) {
-                let agregado = `<a href="${info[i].link}"> <img src="https://image.tmdb.org/t/p/w92/${info[i].rent}" alt="Spiderman"></a>`
-                querywatch.innerHTML += agregado
+            agregado = ""
+            for (let i = 0; i < 1; i++) {
+                agregado += `<a href="${info["KR"].link}"> <p>Hola Mundo</p> </a>`
+                a = `<img src="https://image.tmdb.org/t/p/w92/${info[i]}" alt="Spiderman">`
             }
-            
+            querywatch.innerHTML = agregado
 
+/*En este fetch "info" esta mal y no lo lee bien y e "i" tmb, por eso el for esta raro*/
     
 
         })
@@ -86,6 +89,31 @@ fetch(peli)
             console.log("Error: " + e);
         })
     
+
+    fetch(urlpelirecomendada)
+    .then(function(response){
+        return response.json()
+    })
+    .then(function(data){
+
+        let info = data.results
+        console.log(info);
+        agregar = ""
+        for (let i = 0; i < 5; i++) {
+            agregar +=  `<li>
+                <h3>${info[i].title}</h3>
+                <a href="./detail-movie.html?id=${info[i].id}"> <img src="https://image.tmdb.org/t/p/w154/${info[i].poster_path}" alt="Error"></a>
+            </li>
+            `
+        }
+        provider.innerHTML = agregar
+
+
+
+    })
+    .catch(function(e){
+        console.log("Error: " + e);
+    })
     
 
 
@@ -97,18 +125,12 @@ fetch(peli)
     console.log("Error: " + e);
 })
 
-let recomendaciones = document.querySelector("#rec");
-let seccion_recs = document.querySelector("#recs_eleguidas");
-
 recomendaciones.addEventListener("click",function(recs){
     recs.preventDefault()
-    localStorage.setItem("Recomendaciones", "True")
     seccion_recs.style.display = "block"
 })
 
-let guardar = localStorage.getItem("Recomendaciones")
-
-    
+  
 
 window.addEventListener("load", function(event){ 
     event.preventDefault()

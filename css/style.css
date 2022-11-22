@@ -108,6 +108,17 @@ border-radius: 15px;
 padding: 0px;
 }
 
+.provider{
+  text-emphasis: none;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  flex-wrap: nowrap;
+  background-color: rgb(26, 24, 24);
+  border-radius: 15px;
+  padding: 0px;
+  }
+
 .pelis img{
 width: 190px;
 height: 250px;

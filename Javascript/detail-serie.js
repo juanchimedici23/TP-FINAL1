@@ -5,6 +5,8 @@ console.log(id)
 
 let serie = `https://api.themoviedb.org/3/tv/${id}?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US`
 
+let serieRecomendada = `https://api.themoviedb.org/3/tv/{tv_id}/recommendations?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US&page=1`
+
 let favoritoSerie = []
 
 let recuperoStorage = localStorage.getItem("favoritoSerie")
