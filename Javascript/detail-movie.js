@@ -86,7 +86,7 @@ fetch(peli)
                 for (let i= 0; i< 5; i++){ 
                     
                     
-                    agregado = `
+                    agregado += `
                             <a href = "${infoUSA.link}"><img src = "https://image.tmdb.org/t/p/original/${infoUSA[i].logo_path}"`
                 }
                 

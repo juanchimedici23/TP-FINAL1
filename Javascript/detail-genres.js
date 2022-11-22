@@ -49,21 +49,19 @@ fetch(genPeli)
                     })
 
                     // FIN SEGUNDO FETCH
-
-                for (let index = 0; index < peli_igual_genero.length; index++) {
+                    console.log(peli_igual_genero);
+                    agregado = ""
+                for (let index = 0; index < 5; index++) {
                         agregado += `<li>
-                        <h3>${peliculasdata[i].title}</h3>
-                        <a href="./detail-movie.html?id=${peliculasdata[i].id}"> <img src="https://image.tmdb.org/t/p/w154/${peliculasdata[i].poster_path}" alt="Error"></a>
+                        <h3>${peli_igual_genero[index].title}</h3>
+                        <a href="./detail-movie.html?id=${peli_igual_genero[index].id}"> <img src="https://image.tmdb.org/t/p/w154/${peli_igual_genero[index].poster_path}" alt="Error"></a>
                         <div class="bajofotos">
-                            <p>${peliculasdata[i].release_date}</p><p>Rating: ${peliculasdata[i].vote_average}</p> 
+                            <p>${peli_igual_genero[index].release_date}</p><p>Rating: ${peli_igual_genero[index].vote_average}</p> 
                         </div>
                     </li>`
-
                     }
                     let generoElegido = document.querySelector(".genero_elegido")
-                    console.log(peli_igual_genero);
-                    console.log(generoElegido);
-                    generoElegido.innerHTML += agregado
+                    generoElegido.innerHTML = agregado
                     
                 }
                 
