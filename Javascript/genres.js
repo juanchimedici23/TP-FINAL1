@@ -13,17 +13,27 @@ fetch (generos)
 
     
     let a = document.querySelector(".todos_generos") 
+
     let genero_especifico = ""
 
-    for ( i = 0; i < 7; i++){
-        genero_especifico += ` <article class="gen">
-                                    <a href="./detail-genre.html" class="gen"><h2>${genre[i].name}</h2></a>
-                                </article>
+    
 
-                            `
+
+    for ( i = 0; i < 7; i++){
+        
+        genero_especifico += ` <article class="gen">
+                                    <a href="./detail-genre.html?genre=${genre[i].name}"><h2>${genre[i].name}</h2></a>
+                                </article>`
+        
+
+        
     }
     a.innerHTML = genero_especifico
     })
     .catch(function(e){
         console.log("Error: " + e);
     })
+
+    
+
+    

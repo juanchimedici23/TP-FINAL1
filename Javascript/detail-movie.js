@@ -10,7 +10,7 @@ let peli = `https://api.themoviedb.org/3/movie/${id}?api_key=1c7b96c9c6844bd81ab
 
 let urlPeliValorada = `https://api.themoviedb.org/3/movie/top_rated?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US&page=1`
 
-let watchproviders = `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=1c7b96c9c6844bd81ab3f6d24f285c12`
+let providersPeli = `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=1c7b96c9c6844bd81ab3f6d24f285c12`
 
 let urlpelirecomendada = `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US&page=1`
 
@@ -63,7 +63,7 @@ fetch(peli)
                   
     a.innerHTML += peliculas
 
-    fetch(watchproviders)
+    fetch(providersPeli)
         .then(function(response){
             return response.json()
         })
@@ -75,14 +75,21 @@ fetch(peli)
             console.log(info);
             let querywatch = document.querySelector(".providers")
             agregado = ""
-            for (let i = 0; i < 1; i++) {
-                agregado += `<a href="${info["KR"].link}"> <p>Hola Mundo</p> </a>`
-                a = `<img src="https://image.tmdb.org/t/p/w92/${info[i]}" alt="Spiderman">`
+            for (pais in info) {
+                pais = info[`"${pais}"`]
+                console.log(pais)
+                let comprar = pais.buy
+                if (comprar  != "undefined"){
+                    let logo = pais.buy[0].logo_path
+                    console.log(logo);
+                    agregado += `<a href="${pais.link}"> <p>Hola Mundo</p> </a>`
+                    a = `<img src="https://image.tmdb.org/t/p/w92${logo}" alt="Spiderman">`
+                }
+                
             }
             querywatch.innerHTML = agregado
 
-/*En este fetch "info" esta mal y no lo lee bien y e "i" tmb, por eso el for esta raro*/
-    
+   
 
         })
         .catch(function(e){
@@ -97,7 +104,7 @@ fetch(peli)
     .then(function(data){
 
         let info = data.results
-        console.log(info);
+       
         agregar = ""
         for (let i = 0; i < 5; i++) {
             agregar +=  `<li>
