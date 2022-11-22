@@ -400,7 +400,7 @@ list-style: none;
 }
  
 .gen {
-  background-color: rgba(26, 24, 24, 0.663);
+  background-color: rgba(16, 16, 16, 0.473);
   border-radius: 15px;
   height: 80px;
   width: 140px;
@@ -417,6 +417,10 @@ list-style: none;
 
 .gen h2{
   margin-right: 10px;
+}
+.sin_subrayado {
+  text-decoration: none;
+  text-decoration-color: white;
 }
 
 /* Detalle generos */

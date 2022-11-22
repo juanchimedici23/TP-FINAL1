@@ -25,7 +25,7 @@ fetch (generos)
     for ( i = 0; i < 7; i++){
         
         genero_especifico += ` <article class="gen">
-                                    <a href="./detail-genre.html?id=${genre[i].id}"><h2>${genre[i].name}</h2></a>
+                                    <a href="./detail-genre.html?id=${genre[i].id}" class ="sin_subrayado"><h2>${genre[i].name}</h2></a>
                                 </article>`
         
 
