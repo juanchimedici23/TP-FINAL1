@@ -374,6 +374,19 @@ list-style: none;
   justify-content: space-around;
   align-items: center;
 }
+.todos_generos {
+  background-image: url(./img/Generos/generos-peliculas.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border-radius: 15px;
+  height: 650px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
  
 .gen {
   background-color: rgba(26, 24, 24, 0.663);

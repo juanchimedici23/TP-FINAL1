@@ -9,15 +9,15 @@ fetch (generos)
     console.log(data);
 
     let genre = data.genres
-
+    console.log(genre)
 
     
     let a = document.querySelector(".todos_generos") 
     let genero_especifico = ""
 
-    for (let i =0; i < 5; i++){
+    for ( i = 0; i < 7; i++){
         genero_especifico += ` <article class="gen">
-                                    <a href="./detail-genre.html" class="gen"><h2>${genre.name[i]}</h2></a>
+                                    <a href="./detail-genre.html" class="gen"><h2>${genre[i].name}</h2></a>
                                 </article>
 
                             `
