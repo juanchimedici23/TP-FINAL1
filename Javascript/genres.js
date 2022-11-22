@@ -1,3 +1,6 @@
+
+
+
 let generos = `https://api.themoviedb.org/3/genre/movie/list?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US`
 
 fetch (generos)
@@ -22,7 +25,7 @@ fetch (generos)
     for ( i = 0; i < 7; i++){
         
         genero_especifico += ` <article class="gen">
-                                    <a href="./detail-genre.html?genre=${genre[i].name}"><h2>${genre[i].name}</h2></a>
+                                    <a href="./detail-genre.html?id=${genre[i].id}"><h2>${genre[i].name}</h2></a>
                                 </article>`
         
 

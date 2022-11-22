@@ -11,7 +11,7 @@ let favoritoSerie = JSON.parse(localStorage.getItem("favoritoSerie"))
 
 
 console.log(`Las peliculas favoritas tienen el id: ${favoritoPeli}
-             Las series favoritas tienen el id: ${favoritoSerie}`)
+Las series favoritas tienen el id: ${favoritoSerie}`)
 
 
 function pelisFavoritas (id){
@@ -48,15 +48,16 @@ function pelisFavoritas (id){
 }
 
 function seriesFavoritas(id){ 
+
     let serie = `https://api.themoviedb.org/3/tv/${id}?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US`
-    console.log(id);
+
     fetch(serie)
     .then(function(response){
         return response.json()
     })
     .then(function(data){
         
-        console.log(data);
+        
 
         let b = document.querySelector(".serieFavorita") 
         
@@ -69,7 +70,7 @@ function seriesFavoritas(id){
                         </section>
                     </article> `
         
-        b.innerHTML = series
+        b.innerHTML += series
         })
 
         .catch(function(e){

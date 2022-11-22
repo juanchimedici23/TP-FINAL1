@@ -1,3 +1,8 @@
+let queryString = location.search;
+let queryStringObj = new URLSearchParams(queryString);
+let id_peli = queryStringObj.get('id');
+
+
 let genPeli = `https://api.themoviedb.org/3/genre/movie/list?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US`
 
 let genSerie = `https://api.themoviedb.org/3/genre/tv/list?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US`
@@ -8,11 +13,68 @@ fetch(genPeli)
     })
     .then(function(data){
       
-        let datos = data.results
-        console.log(datos);
-        
+        let listaGeneros = data.genres
+        for (let index = 0; index < listaGeneros.length; index++) {
+            let idgenero = listaGeneros[index].id
+            if ( idgenero == parseInt(id_peli)){ 
+                
+                
+                let listaPeliculas = `https://api.themoviedb.org/3/movie/popular?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US&page=1`
+                
+                let peli_igual_genero = []
+
+                let agregado = ""
+
+
+
+                // COMIENZO SEGUNDO FETCH
+                fetch(listaPeliculas)
+                    .then(function(response){
+                    return response.json()
+                })
+                .then(function(data){
+                    
+                    let peliculas = data.results
+                    
+                    for (let index = 0; index < peliculas.length; index++) {
+                        if (peliculas[index].genre_ids.includes(idgenero)) {
+                            peli_igual_genero.push(peliculas[index])
+                        }
+                        
+                    }
+                    
+                    })
+                    .catch(function(e){
+                        console.log("Error: " + e);
+                    })
+
+                    // FIN SEGUNDO FETCH
+
+                for (let index = 0; index < peli_igual_genero.length; index++) {
+                        agregado += `<li>
+                        <h3>${peliculasdata[i].title}</h3>
+                        <a href="./detail-movie.html?id=${peliculasdata[i].id}"> <img src="https://image.tmdb.org/t/p/w154/${peliculasdata[i].poster_path}" alt="Error"></a>
+                        <div class="bajofotos">
+                            <p>${peliculasdata[i].release_date}</p><p>Rating: ${peliculasdata[i].vote_average}</p> 
+                        </div>
+                    </li>`
+
+                    }
+                    let generoElegido = document.querySelector(".genero_elegido")
+                    console.log(peli_igual_genero);
+                    console.log(generoElegido);
+                    generoElegido.innerHTML += agregado
+                    
+                }
+                
+            }
+
+                    
 
         })
+        
         .catch(function(e){
             console.log("Error: " + e);
         })
+
+        

@@ -10,7 +10,7 @@ let peli = `https://api.themoviedb.org/3/movie/${id}?api_key=1c7b96c9c6844bd81ab
 
 let urlPeliValorada = `https://api.themoviedb.org/3/movie/top_rated?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US&page=1`
 
-let providersPeli = `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=1c7b96c9c6844bd81ab3f6d24f285c12`
+let providersPeli = `https://api.themoviedb.org/3/watch/providers/movie?api_key=1c7b96c9c6844bd81ab3f6d24f285&language=en-US`;
 
 let urlpelirecomendada = `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US&page=1`
 
@@ -29,7 +29,7 @@ fetch(peli)
 })
 .then(function(data){
     
-    console.log(data);
+   
 
     
     let genero = []
@@ -72,21 +72,26 @@ fetch(peli)
             
 
             let info = data.results
-            console.log(info);
+           
             let querywatch = document.querySelector(".providers")
             agregado = ""
-            for (pais in info) {
-                pais = info[`"${pais}"`]
-                console.log(pais)
-                let comprar = pais.buy
-                if (comprar  != "undefined"){
-                    let logo = pais.buy[0].logo_path
-                    console.log(logo);
-                    agregado += `<a href="${pais.link}"> <p>Hola Mundo</p> </a>`
-                    a = `<img src="https://image.tmdb.org/t/p/w92${logo}" alt="Spiderman">`
+            
+                let infoUSA= info["US"]
+                console.log(infoUSA)
+                // console.log(infoUSA.link);
+                console.log(infoUSA.buy[0].logo_path);
+                
+                    
+                    
+                for (let i= 0; i< 5; i++){ 
+                    
+                    
+                    agregado = `
+                            <a href = "${infoUSA.link}"><img src = "https://image.tmdb.org/t/p/original/${infoUSA[i].logo_path}"`
                 }
                 
-            }
+                
+            
             querywatch.innerHTML = agregado
 
    
@@ -142,7 +147,7 @@ window.addEventListener("load", function(event){
     event.preventDefault()
     let boton = document.querySelector("#fav")
     let icon = document.querySelector(".fa-star")
-    console.log(boton);
+   
     if (favoritoPeli.includes(id)) {
         icon.classList.remove("fa-regular")
         icon.classList.add("fa-solid")
@@ -163,10 +168,10 @@ window.addEventListener("load", function(event){
     let favoritosToString = JSON.stringify(favoritoPeli)
     localStorage.setItem("favoritoPeli",favoritosToString)
     
-    console.log(localStorage);
+   
     })
     
     })
-    console.log(id)
-    console.log(localStorage)   
+    
+   
     
