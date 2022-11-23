@@ -30,11 +30,11 @@ fetch(URLpeli)
         for (i =0; i < peliculasdata.length; i++){
             
             peliculas += `<article> 
-                            <a href= "./detail-movie.html?id=${peliculasdata[i].id}" > <p>${peliculasdata[i].title}</p> </a>
+                            <a class= "a" href= "./detail-movie.html?id=${peliculasdata[i].id}" > <p>${peliculasdata[i].title}</p> </a>
                             <section class= "busquedabox">
                             <a href= "./detail-movie.html?id=${peliculasdata[i].id}" ><img src ="https://image.tmdb.org/t/p/w154/${peliculasdata[i].poster_path}" ></a>
                                 <div class= "resumenbusqueda">
-                                    <p> Resumen: ${peliculasdata[i].overview} </p>
+                                    <p > Resumen: ${peliculasdata[i].overview} </p>
                                 </div>
                             </section>
                          </article> `
