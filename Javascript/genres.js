@@ -38,5 +38,23 @@ fetch (generos)
     })
 
     
-
+    let formulario = document.querySelector("form");			
+    let campoBuscar = document.querySelector(".buscador");	
+    let errorBusqueda = document.querySelector(".errorBusqueda")
+    
+    formulario.addEventListener('submit', function(event) {
+        event.preventDefault();  
+    
+        if (campoBuscar.value === '' ) {	
+            errorBusqueda.innerHTML = `El campo esta vacio, complete con una serie o pelicula. ` 
+            
+        } 
+        else if(campoBuscar.value.length<3){
+            errorBusqueda.innerHTML = "El texto debe contener al menos tres caracteres."
+            
+        }
+        else {
+            this.submit()			
+        }
+    }) 
     
