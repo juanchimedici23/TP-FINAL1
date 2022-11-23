@@ -46,11 +46,11 @@ formulario.addEventListener('submit', function(event) {
     event.preventDefault();  
         
     if (campoBuscar.value == '' ) {	
-        errorBusqueda.innerHTML += `El campo esta vacio, complete con una serie o pelicula. ` 
+        errorBusqueda.innerHTML = `El campo esta vacio, complete con una serie o pelicula. ` 
     
             } 
     else if(campoBuscar.value.length<3){
-        errorBusqueda.innerHTML += "El texto debe contener al menos tres caracteres."
+        errorBusqueda.innerHTML = "El texto debe contener al menos tres caracteres."
                 
             }
           else {
