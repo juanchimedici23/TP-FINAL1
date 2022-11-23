@@ -10,7 +10,7 @@ let peli = `https://api.themoviedb.org/3/movie/${id}?api_key=1c7b96c9c6844bd81ab
 
 let urlPeliValorada = `https://api.themoviedb.org/3/movie/top_rated?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US&page=1`
 
-let providersPeli = `https://api.themoviedb.org/3/watch/providers/movie?api_key=1c7b96c9c6844bd81ab3f6d24f285&language=en-US`;
+let providersPeli = `https://api.themoviedb.org/3/watch/providers/movie?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US`;
 
 let urlpelirecomendada = `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US&page=1`
 
@@ -55,54 +55,15 @@ fetch(peli)
                                     <li><strong>Fecha de estreno:</strong> ${data.release_date}</li>
                                     <li><strong>Duración:</strong> ${data.runtime} minutes</li>
                                     <li><strong>Género:</strong> ${genero}</li>
-                                    <li><strong>Get Watch Providers:</strong> <p class = "providers"></p></li>
                                 </ul>
                                 
                         </section>
                         </article> `
                   
     a.innerHTML += peliculas
-
-    fetch(providersPeli)
-        .then(function(response){
-            return response.json()
-        })
-        .then(function(data){
-
-            
-
-            let info = data.results
-           
-            let querywatch = document.querySelector(".providers")
-            agregado = ""
-            
-                let infoUSA= info["US"]
-                console.log(infoUSA)
-                // console.log(infoUSA.link);
-                console.log(infoUSA.buy[0].logo_path);
-                
-                    
-                    
-                for (let i= 0; i< 5; i++){ 
-                    
-                    
-                    agregado += `
-                            <a href = "${infoUSA.link}"><img src = "https://image.tmdb.org/t/p/original/${infoUSA[i].logo_path}"`
-                }
-                
-                
-            
-            querywatch.innerHTML = agregado
-
-   
-
-        })
-        .catch(function(e){
-            console.log("Error: " + e);
-        })
     
 
-    fetch(urlpelirecomendada)
+fetch(urlpelirecomendada)
     .then(function(response){
         return response.json()
     })
@@ -126,15 +87,41 @@ fetch(peli)
         console.log("Error: " + e);
     })
     
-
-
-
-
-
 })
 .catch(function(e){
     console.log("Error: " + e);
 })
+
+fetch(providersPeli)
+    .then(function(response){
+        return response.json()
+    })
+    .then(function(data){
+
+        
+
+        let info = data.results
+        console.log(info);
+        let querywatch = document.querySelector(".providers")
+        agregado = ""
+            
+                
+                
+        for (let i= 0; i< 5; i++){ 
+            let logo = info[i].logo_path
+                
+            agregado += `
+                    <img src = "https://image.tmdb.org/t/p/original/${logo}">`
+        }
+            
+            
+        
+        querywatch.innerHTML = agregado
+
+    })
+    .catch(function(e){
+        console.log("Error: " + e);
+    })
 
 recomendaciones.addEventListener("click",function(recs){
     recs.preventDefault()

@@ -28,6 +28,7 @@ fetch(URLpeli)
         caso_particular.innerHTML += "No se encontraron resultados"
     } else {
         for (i =0; i < peliculasdata.length; i++){
+            
             peliculas += `<article> 
                             <a href= "./detail-movie.html?id=${peliculasdata[i].id}" > <p>${peliculasdata[i].title}</p> </a>
                             <section class= "busquedabox">

@@ -285,6 +285,12 @@ height: 500px;
 border-radius: 15px;
 
 }
+.providers{
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  width: 60px;
+}
 .details {
 width: 300px;
 background-color: rgba(26, 24, 24, 0.663);
