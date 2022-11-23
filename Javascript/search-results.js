@@ -24,7 +24,7 @@ fetch(URLpeli)
     
     let a = document.querySelector(".muestrapeli") 
     let peliculas = ""
-    if(peliculasdata.length === 0) {
+    if(peliculasdata.length == 0) {
         caso_particular.innerHTML += "No se encontraron resultados"
     } else {
         for (i =0; i < peliculasdata.length; i++){

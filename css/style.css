@@ -464,7 +464,8 @@ list-style: none;
 
 
 @media(max-width:320px){
-.menu i{
+
+  .menu i{
   position:relative;
   left: -5px;
 }
@@ -483,11 +484,24 @@ list-style: none;
   display: flex;
   flex-direction: column;
   
+  
 }
 .pelis li{
   margin-left: 8px;
+  
+}
+.imgindex{
+  position: relative;
+  left: -200px;
+}
+.pelis ul{
+  position: relative;
+  right: 0px;
 }
 
+.pelis img{
+  position: relative;
+}
 .series{
   display: flex;
   flex-direction: column;
@@ -580,7 +594,10 @@ h2{
   .last{
     display: none;
   }
-  
+  .fotoindex{
+    display: flex;
+    justify-content: center;
+  }
   }
   
   @media(max-width:1000px){
@@ -599,11 +616,11 @@ h2{
     flex-direction: column;
     justify-content: space-evenly;
   }
-  .cont_peliXpeli{
-    display: flex;
-    justify-content: center;
-  }
-  
+
+  .imgindex{
+    position: relative;
+    left: 220px;
+  } 
   }
 
   
