@@ -25,7 +25,7 @@ fetch (generos)
     for ( i = 0; i < 7; i++){
         
         genero_especifico += ` <article class="gen">
-                                    <a href="./detail-genre.html?id=${genre[i].id}" class ="sin_subrayado"><h2>${genre[i].name}</h2></a>
+                                    <a href="./detail-genre.html?id=${genre[i].id}" class ="sin_subrayado"><h2 class = "a">${genre[i].name}</h2></a>
                                 </article>`
         
 
@@ -46,11 +46,11 @@ formulario.addEventListener('submit', function(event) {
     event.preventDefault();  
         
     if (campoBuscar.value == '' ) {	
-        errorBusqueda.innerHTML += `El campo esta vacio, complete con una serie o pelicula. ` 
+        errorBusqueda.innerHTML = `El campo esta vacio, complete con una serie o pelicula. ` 
     
             } 
     else if(campoBuscar.value.length<3){
-        errorBusqueda.innerHTML += "El texto debe contener al menos tres caracteres."
+        errorBusqueda.innerHTML = "El texto debe contener al menos tres caracteres."
                 
             }
           else {

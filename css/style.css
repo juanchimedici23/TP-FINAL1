@@ -35,6 +35,12 @@ text-decoration: none;
 font-size: 18px;
 }
 
+.a {
+color: #f2f2f2;
+text-decoration: none;
+font-size: 18px;
+}
+
 .menu a:hover {
 background-color: rgb(26, 24, 24);
 color: rgb(143, 143, 143);
@@ -118,6 +124,22 @@ padding: 0px;
   border-radius: 15px;
   padding: 0px;
   }
+
+.genero_eleguido{
+  display: flex;
+  justify-content: center;
+}
+
+.muestrapeli {
+  text-emphasis: none;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  flex-wrap: wrap;
+  background-color: rgb(26, 24, 24);
+  border-radius: 15px;
+  padding: 10px;
+}
 
 .pelis img{
 width: 190px;
@@ -344,6 +366,8 @@ margin-top: 5px;
 
 .resumenbusqueda{
   border-color: #eee;
+  padding: 10px;
+  width: 300px;
   border-radius: 18px;
   border: #eee;
 }
