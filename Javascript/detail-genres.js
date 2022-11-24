@@ -2,7 +2,7 @@ let queryString = location.search;
 let queryStringObj = new URLSearchParams(queryString);
 let id_peli = queryStringObj.get('id');
 
-console.log(id_peli);
+
 
 let lista = `https://api.themoviedb.org/3/movie/popular?api_key=1c7b96c9c6844bd81ab3f6d24f285c12&language=en-US&page=1`
 
