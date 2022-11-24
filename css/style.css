@@ -641,10 +641,33 @@ h2{
     justify-content: space-evenly;
   }
 
-  .imgindex{
+  .imglist{
     position: relative;
     left: 220px;
   } 
+
+  .conteiner_movie {
+    width: 80%;
+    background-color: none;
+    flex-wrap: wrap;
+    
+  }
+  .tpgn{
+    position: relative;
+    left: -20%;
+    top: -30px;
+  }
+
+  .details{
+    background-color: none;
+  }
+  #letras{
+    width: 30%;
+    height:30%;
+    position:relative;
+    top: -650px;
+    left: 90px;
+  }
   }
 
   

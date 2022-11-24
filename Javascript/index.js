@@ -20,9 +20,9 @@ fetch(urlPeliPopulares)
 
     for (i =0; i < 5; i++){
         peliculas += `
-                <li>
+                <li class ="cont_peliXpeli">
                     <h3>${peliculasdata[i].title}</h3>
-                    <a href="./detail-movie.html?id=${peliculasdata[i].id}" class = "imgindex"> <img src="https://image.tmdb.org/t/p/w154/${peliculasdata[i].poster_path}" alt="Error"></a>
+                    <a href="./detail-movie.html?id=${peliculasdata[i].id}" class = "imglist"> <img src="https://image.tmdb.org/t/p/w154/${peliculasdata[i].poster_path}" alt="Error"></a>
                     <div class="bajofotos">
                         <p>${peliculasdata[i].release_date}</p><p>Rating: ${peliculasdata[i].vote_average}</p> 
                     </div>
@@ -53,7 +53,7 @@ fetch(urlSeriesPopulares)
             series += `
                     <li>
                         <h3>${seriesdata[i].name}</h3>
-                        <a href="./detail-serie.html?id=${seriesdata[i].id}"  class = "imgindex"> <img src="https://image.tmdb.org/t/p/w154/${seriesdata[i].poster_path}" alt="Spiderman"></a>
+                        <a href="./detail-serie.html?id=${seriesdata[i].id}"  class = "imglist"> <img src="https://image.tmdb.org/t/p/w154/${seriesdata[i].poster_path}" alt="Spiderman"></a>
                         <div class="bajofotos">
                             <p>${seriesdata[i].first_air_date}</p> <p>Rating: ${seriesdata[i].vote_average}</p> 
                         </div>
@@ -84,7 +84,7 @@ fetch(urlPeliValorada)
         peliculas_valoradas += `
                 <li class = "cont_peliXpeli">
                     <h3>${peliculasdata[i].title}</h3>
-                    <a href="./detail-movie.html?id=${peliculasdata[i].id}"  class = "imgindex"> <img src="https://image.tmdb.org/t/p/w154/${peliculasdata[i].poster_path}" alt="Spiderman"></a>
+                    <a href="./detail-movie.html?id=${peliculasdata[i].id}"  class = "imglist"> <img src="https://image.tmdb.org/t/p/w154/${peliculasdata[i].poster_path}" alt="Spiderman"></a>
                     <div class="bajofotos">
                         <p>${peliculasdata[i].release_date}</p> <p>Rating: ${peliculasdata[i].vote_average}</p> 
                     </div>
@@ -117,3 +117,4 @@ formulario.addEventListener('submit', function(event) {
             this.submit()			
             }
 }) 
+

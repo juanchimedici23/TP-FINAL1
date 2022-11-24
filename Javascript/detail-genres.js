@@ -41,17 +41,17 @@ fetch(lista)
         console.log(info)
         let agregado = ""
         let juja = document.querySelector(".genero_elegido")
-        for (let index = 0; index < info.length; index++) {
+        for (let index = 0; index <= 5; index++) {
             if (info[index].genre_ids.includes(parseInt(id_peli))) {
 
-                agregado += `<li>
+                agregado += `<li class ="cont_peliXpeli">
                 <h3>${info[index].title}</h3>
-                <a href="./detail-movie.html?id=${info[index].id}"> <img src="https://image.tmdb.org/t/p/w154/${info[index].poster_path}" alt="Error"></a>
+                <a href="./detail-movie.html?id=${info[index].id}" class= "imglist"> <img src="https://image.tmdb.org/t/p/w154/${info[index].poster_path}" alt="Error"></a>
                 <div class="bajofotos">
                     <p>${info[index].release_date}</p><p>Rating: ${info[index].vote_average}</p> 
                 </div>
                 </li>`
-             
+                
             }
         }
         juja.innerHTML += agregado

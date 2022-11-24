@@ -46,16 +46,16 @@ fetch(peli)
                         <h1 class="top_y_BBAD">${data.title}</h1>
                         <section class="conteiner_movie">
                         <div class="tpgn">
-                        <img src ="https://image.tmdb.org/t/p/w780/${data.poster_path}" > 
-                            </div>
-                            <div class="details" id="letras">
-                                <p><strong>Sinópsis:</strong> ${data.overview}</p>
-                                <ul>
-                                    <li><strong>Rating:</strong> ${data.vote_average}</li>
-                                    <li><strong>Fecha de estreno:</strong> ${data.release_date}</li>
-                                    <li><strong>Duración:</strong> ${data.runtime} minutes</li>
-                                    <li><strong>Género:</strong> ${genero}</li>
-                                </ul>
+                            <img src ="https://image.tmdb.org/t/p/w780/${data.poster_path}" > 
+                        </div>
+                        <div class="details" id="letras">
+                            <p><strong>Sinópsis:</strong> ${data.overview}</p>
+                            <ul>
+                                <li><strong>Rating:</strong> ${data.vote_average}</li>
+                                <li><strong>Fecha de estreno:</strong> ${data.release_date}</li>
+                                <li><strong>Duración:</strong> ${data.runtime} minutes</li>
+                                <li><strong>Género:</strong> ${genero}</li>
+                            </ul>
                                 
                         </section>
                         </article> `
